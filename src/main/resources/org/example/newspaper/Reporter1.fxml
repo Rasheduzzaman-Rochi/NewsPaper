@@ -30,16 +30,16 @@
       </Button>
       <Button layoutX="81.0" layoutY="68.0" mnemonicParsing="false" text="Trending News" />
       <Button layoutX="433.0" layoutY="68.0" mnemonicParsing="false" text="Collected Links" />
-      <TextArea layoutX="19.0" layoutY="320.0" prefHeight="77.0" prefWidth="265.0" />
+      <TextArea layoutX="14.0" layoutY="320.0" prefHeight="96.0" prefWidth="265.0" promptText="Common Themes" />
       <Label layoutX="19.0" layoutY="15.0" text="Reporter (Print)">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="300.0" layoutY="372.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="41.0" text="Save" />
-      <TextArea layoutX="378.0" layoutY="320.0" prefHeight="77.0" prefWidth="205.0" />
-      <Button layoutX="594.0" layoutY="372.0" mnemonicParsing="false" text="Save" />
-      <Button layoutX="425.0" layoutY="414.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="162.0" text="Publish Article" />
+      <Button layoutX="300.0" layoutY="390.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="41.0" text="Save" />
+      <TextArea layoutX="378.0" layoutY="320.0" prefHeight="87.0" prefWidth="205.0" promptText="Select Best One" />
+      <Button layoutX="599.0" layoutY="381.0" mnemonicParsing="false" text="Save" />
+      <Button layoutX="433.0" layoutY="423.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" text="Publish Article" />
       <Button layoutX="594.0" layoutY="266.0" mnemonicParsing="false" text="Delete Link" />
    </children>
 </AnchorPane>
