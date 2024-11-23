@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.newspaper.ReporterDash"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.ReporterDash">
+   <children>
+      <Label layoutX="223.0" layoutY="14.0" prefHeight="51.0" prefWidth="237.0" text="Reporter DashBoard">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="602.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: deepskyblue;" text="Log out" />
+      <Button layoutX="60.0" layoutY="90.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="213.0" style="-fx-background-color: brown;" text="Trending News And Unique Articles" textFill="WHITE" />
+      <Button layoutX="360.0" layoutY="131.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="222.0" style="-fx-background-color: coral;" text="Write Articles Then Submit For Review" />
+      <Button layoutX="60.0" layoutY="184.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="270.0" style="-fx-background-color: darksalmon;" text="Improve Quality And Clarity Based On Feedback" />
+      <Button layoutX="360.0" layoutY="228.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="199.0" style="-fx-background-color: darkseagreen;" text="Share Images And Visual Materials" />
+      <Button layoutX="60.0" layoutY="280.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="313.0" style="-fx-background-color: goldenrod;" text="The Accuracy Of Facts And Maintain Journalistic Intigrity" />
+      <Button layoutX="362.0" layoutY="330.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="235.0" style="-fx-background-color: yellowgreen;" text="Gather Information From Various Sources" />
+      <Button layoutX="60.0" layoutY="373.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="182.0" style="-fx-background-color: palevioletred;" text="Participate In Regular Meetings" />
+      <Button layoutX="362.0" layoutY="415.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="262.0" style="-fx-background-color: orchid;" text="Organize Event Schedules And Coverage Plans" />
+   </children>
 </AnchorPane>
