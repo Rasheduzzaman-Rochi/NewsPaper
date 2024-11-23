@@ -6,7 +6,6 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -43,23 +42,10 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="57.0" layoutY="434.0" prefHeight="23.0" prefWidth="321.0" text="Label">
+      <Label alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
          <effect>
             <Glow />
          </effect>
       </Label>
-      <TextField alignment="CENTER" layoutX="399.0" layoutY="392.0" prefHeight="25.0" prefWidth="270.0" promptText="Edit Subheadling" />
-      <TextField alignment="CENTER" layoutX="399.0" layoutY="361.0" prefHeight="25.0" prefWidth="270.0" promptText="Edit Headline" />
-      <Button layoutX="495.0" layoutY="426.0" mnemonicParsing="false" text=" Save the changes">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Button>
-      <TextField alignment="CENTER" layoutX="14.0" layoutY="353.0" prefHeight="25.0" prefWidth="270.0" promptText="Factual Accuracy" />
-      <Button layoutX="291.0" layoutY="361.0" mnemonicParsing="false" text="Add Comment">
-         <font>
-            <Font size="7.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>
