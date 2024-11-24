@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.newspaper.Editor5"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Editor1">
+   <children>
+      <Label layoutX="26.0" layoutY="11.0" text="EDITOR (Print)">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <TableView layoutX="14.0" layoutY="62.0" prefHeight="240.0" prefWidth="457.0">
+         <columns>
+            <TableColumn prefWidth="66.66666412353516" text="Article ID" />
+            <TableColumn prefWidth="136.6666717529297" text="Title" />
+            <TableColumn prefWidth="57.66668701171875" text="Category" />
+            <TableColumn prefWidth="102.66665649414062" text="Finalization Date" />
+            <TableColumn prefWidth="96.33334350585938" text="Priority Level" />
+         </columns>
+      </TableView>
+      <Button layoutX="263.0" layoutY="313.0" mnemonicParsing="false" text="Refresh">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="588.0" layoutY="21.0" mnemonicParsing="false" text="Logout">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextArea layoutX="475.0" layoutY="64.0" prefHeight="239.0" prefWidth="199.0" promptText="Placement suggestions or additional comments for the layout team." wrapText="true" />
+      <Button layoutX="628.0" layoutY="309.0" mnemonicParsing="false" text="Sent" />
+      <ComboBox layoutX="28.0" layoutY="313.0" prefHeight="25.0" prefWidth="120.0" promptText="Priority Level" />
+      <Button layoutX="392.0" layoutY="313.0" mnemonicParsing="false" text="Confirm">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <TextField layoutX="21.0" layoutY="350.0" promptText="Priorities" />
+   </children>
 </AnchorPane>
