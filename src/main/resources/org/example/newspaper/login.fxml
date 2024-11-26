@@ -28,7 +28,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Button defaultButton="true" layoutX="454.0" layoutY="311.0" mnemonicParsing="false" text="Login">
+      <Button defaultButton="true" layoutX="454.0" layoutY="311.0" mnemonicParsing="false" onAction="#onLogin" text="Login">
          <font>
             <Font size="18.0" />
          </font>

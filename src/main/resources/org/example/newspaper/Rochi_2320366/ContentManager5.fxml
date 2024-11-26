@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.newspaper.Rochi_2320366.ContentManager5"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor1">
+   <children>
+      <Label layoutX="15.0" layoutY="8.0" text="Content Manager (online)">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="75.0" layoutY="201.0" mnemonicParsing="false" text="Apply Filter">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="588.0" layoutY="21.0" mnemonicParsing="false" text="Back">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="176.0" layoutY="317.0" mnemonicParsing="false" text="Save Report">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <DatePicker layoutX="27.0" layoutY="79.0" promptText="Date Picker" />
+      <ComboBox layoutX="27.0" layoutY="118.0" prefHeight="25.0" prefWidth="173.0" promptText="Article  Category" />
+      <TextField layoutX="26.0" layoutY="160.0" prefHeight="25.0" prefWidth="175.0" promptText="Search bar" />
+      <BarChart layoutX="367.0" layoutY="56.0" prefHeight="162.0" prefWidth="310.0" title="Bar Chart">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <LineChart layoutX="368.0" layoutY="225.0" prefHeight="202.0" prefWidth="302.0" title="Line Chart">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </children>
 </AnchorPane>
