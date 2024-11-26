@@ -6,7 +6,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.DataEntryDash">
    <children>
       <Label layoutX="223.0" layoutY="14.0" text="Data Entry (Online)">
@@ -19,15 +18,15 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="602.0" layoutY="68.0" mnemonicParsing="false" text="Log out" />
+      <Button layoutX="602.0" layoutY="46.0" mnemonicParsing="false" onAction="#logOutButton" text="Log out" />
       <Line endX="16.000030517578125" endY="196.66665649414062" layoutX="325.0" layoutY="168.0" startX="16.000030517578125" startY="-80.00000762939453" />
-      <Button layoutX="68.0" layoutY="118.0" mnemonicParsing="false" text="Article Title And Content" />
-      <Button layoutX="68.0" layoutY="174.0" mnemonicParsing="false" text="Organize File Content For Easily Found Later" />
-      <Button layoutX="68.0" layoutY="236.0" mnemonicParsing="false" text="Articles To Find Any Formatting Errors" />
-      <Button layoutX="68.0" layoutY="307.0" mnemonicParsing="false" text="Upload Image With Correct Articles" />
-      <Button layoutX="412.0" layoutY="118.0" mnemonicParsing="false" text="Organize Articles Into Categories" />
-      <Button layoutX="412.0" layoutY="174.0" mnemonicParsing="false" text="Generate Report" />
-      <Button layoutX="414.0" layoutY="236.0" mnemonicParsing="false" text="Contact Reporters" />
-      <Button layoutX="412.0" layoutY="307.0" mnemonicParsing="false" text="Update Exiting Articles With New Information" />
+      <Button layoutX="68.0" layoutY="118.0" mnemonicParsing="false" onAction="#titleAndContentButton" text="Article Title And Content" />
+      <Button layoutX="68.0" layoutY="174.0" mnemonicParsing="false" onAction="#fileContentFoundLaterButton" text="Organize File Content For Easily Found Later" />
+      <Button layoutX="68.0" layoutY="236.0" mnemonicParsing="false" onAction="#formattingErrorsButton" text="Articles To Find Any Formatting Errors" />
+      <Button layoutX="68.0" layoutY="307.0" mnemonicParsing="false" onAction="#imageAndCorrectArticlesButton" text="Upload Image With Correct Articles" />
+      <Button layoutX="412.0" layoutY="118.0" mnemonicParsing="false" onAction="#articlesIntoCatagoriesButton" text="Organize Articles Into Categories" />
+      <Button layoutX="412.0" layoutY="174.0" mnemonicParsing="false" onAction="#generateReportButton" text="Generate Report" />
+      <Button layoutX="414.0" layoutY="236.0" mnemonicParsing="false" onAction="#contactReportersButton" text="Contact Reporters" />
+      <Button layoutX="412.0" layoutY="307.0" mnemonicParsing="false" onAction="#updateArticlesWithNewInformationButton" text="Update Exiting Articles With New Information" />
    </children>
 </AnchorPane>

@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="458.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.DataEntry5">
    <children>
       <Label layoutX="14.0" layoutY="14.0" text="Data Entry (Online)">
@@ -16,22 +15,22 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="583.0" layoutY="32.0" mnemonicParsing="false" text="Log out">
+      <Button layoutX="601.0" layoutY="32.0" mnemonicParsing="false" onAction="#backButton" text="Back">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <ComboBox layoutX="14.0" layoutY="77.0" prefHeight="25.0" prefWidth="176.0" promptText="Article Titles" />
-      <ComboBox layoutX="14.0" layoutY="114.0" prefHeight="25.0" prefWidth="176.0" promptText="Category" />
-      <Button layoutX="147.0" layoutY="194.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="43.0" text="Save" />
+      <ComboBox fx:id="titleComboBox" layoutX="14.0" layoutY="77.0" prefHeight="25.0" prefWidth="176.0" promptText="Article Titles" />
+      <ComboBox fx:id="categoryComboBox" layoutX="14.0" layoutY="114.0" prefHeight="25.0" prefWidth="176.0" promptText="Category" />
+      <Button layoutX="147.0" layoutY="194.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="27.0" prefWidth="43.0" text="Save" />
       <Label layoutX="14.0" layoutY="159.0" prefHeight="25.0" prefWidth="176.0" text="Feedback Massage" />
-      <TableView layoutX="302.0" layoutY="77.0" prefHeight="224.0" prefWidth="344.0">
+      <TableView fx:id="articleTable" layoutX="302.0" layoutY="77.0" prefHeight="224.0" prefWidth="344.0">
         <columns>
-          <TableColumn prefWidth="116.66668701171875" text="Article Title" />
-          <TableColumn prefWidth="113.33328247070312" text="Category" />
-            <TableColumn prefWidth="112.66668701171875" text="Date" />
+          <TableColumn fx:id="titleCol" prefWidth="116.66668701171875" text="Article Title" />
+          <TableColumn fx:id="categoryCol" prefWidth="113.33328247070312" text="Category" />
+            <TableColumn fx:id="dateCol" prefWidth="112.66668701171875" text="Date" />
         </columns>
       </TableView>
-      <Button layoutX="538.0" layoutY="326.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="107.0" text="Category Filter" />
+      <Button layoutX="538.0" layoutY="326.0" mnemonicParsing="false" onAction="#categoryFilterButton" prefHeight="35.0" prefWidth="107.0" text="Category Filter" />
    </children>
 </AnchorPane>

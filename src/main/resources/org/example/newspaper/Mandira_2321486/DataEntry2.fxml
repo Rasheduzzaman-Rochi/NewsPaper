@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.DataEntry2">
    <children>
       <Label layoutX="14.0" layoutY="14.0" text="Data Entry (Online)">
@@ -17,26 +16,26 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="597.0" layoutY="21.0" mnemonicParsing="false" text="Log out">
+      <Button layoutX="597.0" layoutY="21.0" mnemonicParsing="false" onAction="#backButton" text="Back">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="26.0" layoutY="69.0" mnemonicParsing="false" text="Organize Articles" />
-      <TableView layoutX="23.0" layoutY="103.0" prefHeight="215.0" prefWidth="385.0">
+      <Button layoutX="26.0" layoutY="69.0" mnemonicParsing="false" onAction="#organizeArticleButton" text="Organize Articles" />
+      <TableView fx:id="articlesTable" layoutX="23.0" layoutY="103.0" prefHeight="215.0" prefWidth="385.0">
         <columns>
-          <TableColumn prefWidth="82.66668891906738" text="Title" />
-          <TableColumn prefWidth="81.33330535888672" text="Date" />
-            <TableColumn prefWidth="114.66673278808594" text="Category" />
-            <TableColumn prefWidth="104.6666259765625" text="Status" />
+          <TableColumn fx:id="titleCol" prefWidth="82.66668891906738" text="Title" />
+          <TableColumn fx:id="dateCol" prefWidth="81.33330535888672" text="Date" />
+            <TableColumn fx:id="categoryCol" prefWidth="114.66673278808594" text="Category" />
+            <TableColumn fx:id="statusCol" prefWidth="104.6666259765625" text="Status" />
         </columns>
       </TableView>
-      <DatePicker layoutX="464.0" layoutY="82.0" prefHeight="27.0" prefWidth="175.0" promptText="Filter Date" />
-      <ComboBox layoutX="464.0" layoutY="119.0" prefHeight="27.0" prefWidth="175.0" promptText="Filter Category" />
-      <ComboBox layoutX="464.0" layoutY="155.0" prefHeight="27.0" prefWidth="175.0" promptText="Filter Status" />
-      <Button layoutX="513.0" layoutY="203.0" mnemonicParsing="false" text="Apply Filter" />
-      <Button layoutX="231.0" layoutY="336.0" mnemonicParsing="false" text="File Article" />
-      <ComboBox layoutX="23.0" layoutY="336.0" prefHeight="27.0" prefWidth="185.0" promptText="Folders" />
+      <DatePicker fx:id="filterDatePicker" layoutX="464.0" layoutY="82.0" prefHeight="27.0" prefWidth="175.0" promptText="Filter Date" />
+      <ComboBox fx:id="filterCategoryComboBox" layoutX="464.0" layoutY="119.0" prefHeight="27.0" prefWidth="175.0" promptText="Filter Category" />
+      <ComboBox fx:id="filterStatusComboBox" layoutX="464.0" layoutY="155.0" prefHeight="27.0" prefWidth="175.0" promptText="Filter Status" />
+      <Button layoutX="513.0" layoutY="203.0" mnemonicParsing="false" onAction="#applyFilterButton" text="Apply Filter" />
+      <Button layoutX="231.0" layoutY="336.0" mnemonicParsing="false" onAction="#fileArticleButton" text="File Article" />
+      <ComboBox fx:id="foldersComboBox" layoutX="23.0" layoutY="336.0" prefHeight="27.0" prefWidth="185.0" promptText="Folders" />
       <Label layoutX="23.0" layoutY="379.0" prefHeight="35.0" prefWidth="361.0" text="Confirmation Massage" />
    </children>
 </AnchorPane>

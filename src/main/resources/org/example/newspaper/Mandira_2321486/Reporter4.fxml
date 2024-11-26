@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.Reporter4">
    <children>
       <Label layoutX="21.0" layoutY="14.0" text="Reporter (Print)">
@@ -16,24 +15,24 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="599.0" layoutY="35.0" mnemonicParsing="false" text="Log out">
+      <Button layoutX="599.0" layoutY="35.0" mnemonicParsing="false" onAction="#backButton" text="Back">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="29.0" layoutY="68.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="141.0" text="Upload Visual Materials" />
-      <TableView layoutX="29.0" layoutY="113.0" prefHeight="201.0" prefWidth="399.0">
+      <Button layoutX="29.0" layoutY="68.0" mnemonicParsing="false" onAction="#visualMaterialsButton" prefHeight="27.0" prefWidth="141.0" text="Upload Visual Materials" />
+      <TableView fx:id="visualTable" layoutX="29.0" layoutY="113.0" prefHeight="201.0" prefWidth="399.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Title" />
-          <TableColumn prefWidth="90.6666488647461" text="Author" />
-            <TableColumn prefWidth="81.33332824707031" text="Date" />
-            <TableColumn prefWidth="151.3332977294922" text="Attachment Status" />
+          <TableColumn fx:id="titleCol" prefWidth="75.0" text="Title" />
+          <TableColumn fx:id="authorCol" prefWidth="90.6666488647461" text="Author" />
+            <TableColumn fx:id="dateCol" prefWidth="81.33332824707031" text="Date" />
+            <TableColumn fx:id="statusCol" prefWidth="151.3332977294922" text="Attachment Status" />
         </columns>
       </TableView>
-      <ListView layoutX="445.0" layoutY="113.0" prefHeight="201.0" prefWidth="200.0" />
-      <Button layoutX="561.0" layoutY="331.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="83.0" text="Attach File" />
-      <Button layoutX="263.0" layoutY="364.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" text=" Notify Design Team" />
+      <ListView fx:id="fileList" layoutX="445.0" layoutY="113.0" prefHeight="201.0" prefWidth="200.0" />
+      <Button layoutX="561.0" layoutY="331.0" mnemonicParsing="false" onAction="#attachFileButton" prefHeight="27.0" prefWidth="83.0" text="Attach File" />
+      <Button layoutX="263.0" layoutY="364.0" mnemonicParsing="false" onAction="#notifyDesignTeamButton" prefHeight="35.0" prefWidth="124.0" text=" Notify Design Team" />
       <Label layoutX="29.0" layoutY="409.0" prefHeight="49.0" prefWidth="457.0" />
-      <Button layoutX="495.0" layoutY="421.0" mnemonicParsing="false" text="Confirm" />
+      <Button layoutX="495.0" layoutY="421.0" mnemonicParsing="false" onAction="#confirmButton" text="Confirm" />
    </children>
 </AnchorPane>
