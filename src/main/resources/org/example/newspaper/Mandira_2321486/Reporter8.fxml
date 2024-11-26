@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.Reporter8">
    <children>
       <Label layoutX="14.0" layoutY="14.0" text="Reporter (Print)">
@@ -17,33 +16,33 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="611.0" layoutY="49.0" mnemonicParsing="false" text="Log out">
+      <Button layoutX="617.0" layoutY="32.0" mnemonicParsing="false" text="Back">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <ComboBox layoutX="444.0" layoutY="86.0" prefHeight="25.0" prefWidth="179.0" promptText="Assign Reporter" />
-      <TableView layoutX="14.0" layoutY="124.0" prefHeight="239.0" prefWidth="366.0">
+      <ComboBox fx:id="reporterComboBox" layoutX="444.0" layoutY="86.0" prefHeight="25.0" prefWidth="179.0" promptText="Assign Reporter" />
+      <TableView fx:id="eventTable" layoutX="14.0" layoutY="124.0" prefHeight="239.0" prefWidth="366.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Name" />
-          <TableColumn prefWidth="82.6666488647461" text="Date" />
-            <TableColumn prefWidth="88.00001525878906" text="Time" />
-            <TableColumn prefWidth="119.33331298828125" text="Location" />
+          <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="dateCol" prefWidth="82.6666488647461" text="Date" />
+            <TableColumn fx:id="timeCol" prefWidth="88.00001525878906" text="Time" />
+            <TableColumn fx:id="locationCol" prefWidth="119.33331298828125" text="Location" />
         </columns>
       </TableView>
-      <Button layoutX="14.0" layoutY="86.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="New Event" />
-      <Button layoutX="305.0" layoutY="378.0" mnemonicParsing="false" text="Save Event" />
-      <DatePicker layoutX="205.0" layoutY="86.0" promptText="Event Date" />
-      <ComboBox layoutX="444.0" layoutY="118.0" prefHeight="25.0" prefWidth="179.0" promptText="Filter Date" />
-      <ComboBox layoutX="444.0" layoutY="150.0" prefHeight="25.0" prefWidth="179.0" promptText="Filter Location" />
-      <TableView layoutX="444.0" layoutY="182.0" prefHeight="179.0" prefWidth="231.0">
+      <Button layoutX="14.0" layoutY="86.0" mnemonicParsing="false" onAction="#newEventButton" prefHeight="25.0" prefWidth="109.0" text="New Event" />
+      <Button layoutX="305.0" layoutY="378.0" mnemonicParsing="false" onAction="#saveEventButton" text="Save Event" />
+      <DatePicker fx:id="eventDatePicker" layoutX="205.0" layoutY="86.0" promptText="Event Date" />
+      <ComboBox fx:id="filterDateComboBox" layoutX="444.0" layoutY="118.0" prefHeight="25.0" prefWidth="179.0" promptText="Filter Date" />
+      <ComboBox fx:id="filterLocationComboBox" layoutX="444.0" layoutY="150.0" prefHeight="25.0" prefWidth="179.0" promptText="Filter Location" />
+      <TableView fx:id="filterTable" layoutX="444.0" layoutY="182.0" prefHeight="179.0" prefWidth="231.0">
         <columns>
-          <TableColumn prefWidth="84.66659545898438" text="Event Name" />
-          <TableColumn prefWidth="66.00006103515625" text="Date" />
-            <TableColumn prefWidth="79.33333333333334" text="Location" />
+          <TableColumn fx:id="eventNameCol" prefWidth="84.66659545898438" text="Event Name" />
+          <TableColumn fx:id="filterDateCol" prefWidth="66.00006103515625" text="Date" />
+            <TableColumn fx:id="filterLocationCol" prefWidth="79.33333333333334" text="Location" />
         </columns>
       </TableView>
-      <Button layoutX="444.0" layoutY="423.0" mnemonicParsing="false" text="Edit Event" />
-      <Button layoutX="578.0" layoutY="423.0" mnemonicParsing="false" text="Delete Event" />
+      <Button layoutX="444.0" layoutY="423.0" mnemonicParsing="false" onAction="#editEventButton" text="Edit Event" />
+      <Button layoutX="578.0" layoutY="423.0" mnemonicParsing="false" onAction="#deleteEventButton" text="Delete Event" />
    </children>
 </AnchorPane>

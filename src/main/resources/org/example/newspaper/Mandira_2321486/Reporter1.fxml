@@ -10,36 +10,36 @@
 
 <AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.Reporter1">
    <children>
-      <TableView layoutX="14.0" layoutY="103.0" prefHeight="188.0" prefWidth="315.0">
+      <TableView fx:id="newsTable" layoutX="14.0" layoutY="103.0" prefHeight="188.0" prefWidth="315.0">
         <columns>
-          <TableColumn prefWidth="104.00000286102295" text="Headline" />
-          <TableColumn prefWidth="102.66667938232422" text="Source" />
-            <TableColumn prefWidth="106.00004577636719" text="Date Published" />
+          <TableColumn fx:id="headlineCol" prefWidth="104.00000286102295" text="Headline" />
+          <TableColumn fx:id="sourceCol" prefWidth="102.66667938232422" text="Source" />
+            <TableColumn fx:id="dateCol" prefWidth="106.00004577636719" text="Date Published" />
         </columns>
       </TableView>
-      <TableView layoutX="378.0" layoutY="103.0" prefHeight="188.0" prefWidth="205.0">
+      <TableView fx:id="linksTable" layoutX="378.0" layoutY="103.0" prefHeight="188.0" prefWidth="205.0">
         <columns>
-          <TableColumn prefWidth="108.66668701171875" text="Article Link" />
-          <TableColumn prefWidth="95.33328247070312" text="Added Date" />
+          <TableColumn fx:id="linkCol" prefWidth="108.66668701171875" text="Article Link" />
+          <TableColumn fx:id="linkDateCol" prefWidth="95.33328247070312" text="Added Date" />
         </columns>
       </TableView>
-      <Button layoutX="599.0" layoutY="20.0" mnemonicParsing="false" text="Log out">
+      <Button layoutX="616.0" layoutY="19.0" mnemonicParsing="false" onAction="#backButton" text="Back">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="81.0" layoutY="68.0" mnemonicParsing="false" text="Trending News" />
-      <Button layoutX="433.0" layoutY="68.0" mnemonicParsing="false" text="Collected Links" />
-      <TextArea layoutX="14.0" layoutY="320.0" prefHeight="96.0" prefWidth="265.0" promptText="Common Themes" />
+      <Button layoutX="81.0" layoutY="68.0" mnemonicParsing="false" onAction="#trendingNewsButton" text="Trending News" />
+      <Button layoutX="433.0" layoutY="68.0" mnemonicParsing="false" onAction="#collectedLinksButton" text="Collected Links" />
+      <TextArea fx:id="commonThemesTextArea" layoutX="14.0" layoutY="320.0" prefHeight="96.0" prefWidth="265.0" promptText="Common Themes" />
       <Label layoutX="19.0" layoutY="15.0" text="Reporter (Print)">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="300.0" layoutY="390.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="41.0" text="Save" />
-      <TextArea layoutX="378.0" layoutY="320.0" prefHeight="87.0" prefWidth="205.0" promptText="Select Best One" />
-      <Button layoutX="599.0" layoutY="381.0" mnemonicParsing="false" text="Save" />
-      <Button layoutX="433.0" layoutY="423.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" text="Publish Article" />
-      <Button layoutX="594.0" layoutY="266.0" mnemonicParsing="false" text="Delete Link" />
+      <Button layoutX="287.0" layoutY="393.0" mnemonicParsing="false" onAction="#themesSaveButton" prefHeight="25.0" prefWidth="41.0" text="Save" />
+      <TextArea fx:id="bestOneTextArea" layoutX="378.0" layoutY="320.0" prefHeight="87.0" prefWidth="205.0" promptText="Select Best One" />
+      <Button layoutX="599.0" layoutY="381.0" mnemonicParsing="false" onAction="#bestOneSaveButton" text="Save" />
+      <Button layoutX="433.0" layoutY="423.0" mnemonicParsing="false" onAction="#publishArticleButton" prefHeight="25.0" prefWidth="205.0" text="Publish Article" />
+      <Button layoutX="594.0" layoutY="266.0" mnemonicParsing="false" onAction="#deleteLinkButton" text="Delete Link" />
    </children>
 </AnchorPane>
