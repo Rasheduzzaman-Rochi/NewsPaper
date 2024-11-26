@@ -1,6 +1,7 @@
 module org.example.newspaper {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens org.example.newspaper to javafx.fxml;
@@ -11,4 +12,6 @@ module org.example.newspaper {
     opens org.example.newspaper.Arong_2321464 to javafx.fxml;
     exports org.example.newspaper.Mandira_2321486;
     opens org.example.newspaper.Mandira_2321486 to javafx.fxml;
+    exports org.example.newspaper.Mushfiq_2321450;
+    opens org.example.newspaper.Mushfiq_2321450 to javafx.fxml;
 }

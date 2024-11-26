@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mushfiq_2321450.LayoutDesigner7">
+   <children>
+      <Pane fx:id="pane1" layoutX="208.0" layoutY="47.0" prefHeight="259.0" prefWidth="250.0">
+         <children>
+            <Line endX="132.39999389648438" endY="3.814697265625E-6" layoutX="118.0" startX="-117.99996948242188" startY="3.814697265625E-6" />
+            <Line endX="149.39999389648438" endY="0.20001220703125" layoutX="101.0" layoutY="259.0" startX="-100.99996948242188" startY="0.20001220703125" />
+         </children>
+      </Pane>
+      <Line endX="82.50003051757812" endY="175.70001220703125" layoutX="125.0" layoutY="130.0" startX="83.00003051757812" startY="-83.0" />
+      <Line endX="-89.60000610351562" endY="171.20001220703125" layoutX="548.0" layoutY="135.0" startX="-89.60000610351562" startY="-87.5" />
+      <ComboBox fx:id="comboBox" layoutX="56.0" layoutY="339.0" prefWidth="150.0" promptText="Paper Quality" />
+      <TextField fx:id="resolutionTF" layoutX="57.0" layoutY="388.0" promptText="Resolution" />
+      <Button layoutX="299.0" layoutY="381.0" mnemonicParsing="false" onAction="#OnSubmitButtonClick" text="Submit">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="16.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnBackButtonClick" text="Back" />
+   </children>
+</AnchorPane>
