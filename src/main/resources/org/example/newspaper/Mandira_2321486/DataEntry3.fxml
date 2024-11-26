@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.DataEntry3">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Data Entry (Online)">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="617.0" layoutY="37.0" mnemonicParsing="false" text="Log out">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="64.0" mnemonicParsing="false" text="Review Pending Articles" />
+      <TableView layoutX="14.0" layoutY="99.0" prefHeight="216.0" prefWidth="419.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Title" />
+          <TableColumn prefWidth="99.33330535888672" text="Author" />
+            <TableColumn prefWidth="103.33335876464844" text="Date" />
+            <TableColumn prefWidth="141.33331298828125" text="Review Status" />
+        </columns>
+      </TableView>
+      <TextArea layoutX="448.0" layoutY="99.0" prefHeight="216.0" prefWidth="200.0" promptText="Article Content" />
+      <Button layoutX="554.0" layoutY="332.0" mnemonicParsing="false" text="Check Spelling" />
+      <Button layoutX="279.0" layoutY="345.0" mnemonicParsing="false" text="Save Article" />
+      <Button layoutX="520.0" layoutY="413.0" mnemonicParsing="false" text="Notify Editorial Team" />
+      <Label layoutX="14.0" layoutY="345.0" prefHeight="25.0" prefWidth="247.0" text="Success Massage" />
+   </children>
+</AnchorPane>
