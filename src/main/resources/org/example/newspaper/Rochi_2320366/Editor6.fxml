@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor1">
+   <children>
+      <Label layoutX="26.0" layoutY="11.0" text="EDITOR (Print)">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="540.0" layoutY="313.0" mnemonicParsing="false" text="Apply">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="588.0" layoutY="21.0" mnemonicParsing="false" text="Logout">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextArea layoutX="384.0" layoutY="64.0" prefHeight="239.0" prefWidth="199.0" />
+      <Button layoutX="35.0" layoutY="317.0" mnemonicParsing="false" text="Zoom In" />
+      <ComboBox layoutX="35.0" layoutY="360.0" prefWidth="150.0" promptText="Status of the Article" />
+      <Button layoutX="300.0" layoutY="329.0" mnemonicParsing="false" text="Confirm Approval">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <ScrollPane layoutX="34.0" layoutY="63.0" prefHeight="246.0" prefWidth="225.0">
+         <content>
+            <ImageView fitHeight="245.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true" />
+         </content>
+      </ScrollPane>
+      <Button layoutX="107.0" layoutY="317.0" mnemonicParsing="false" text="Zoom Out" />
+   </children>
+</AnchorPane>

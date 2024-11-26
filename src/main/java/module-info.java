@@ -5,4 +5,6 @@ module org.example.newspaper {
 
     opens org.example.newspaper to javafx.fxml;
     exports org.example.newspaper;
+    exports org.example.newspaper.Rochi_2320366;
+    opens org.example.newspaper.Rochi_2320366 to javafx.fxml;
 }
