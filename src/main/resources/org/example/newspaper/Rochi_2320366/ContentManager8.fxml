@@ -13,45 +13,45 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.ContentManager8">
    <children>
       <Label layoutX="15.0" layoutY="8.0" text="Content Manager (online)">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TableView layoutX="18.0" layoutY="63.0" prefHeight="147.0" prefWidth="396.0">
+      <TableView fx:id="table" layoutX="18.0" layoutY="63.0" prefHeight="147.0" prefWidth="396.0">
          <columns>
-            <TableColumn prefWidth="83.0" text="Title" />
-            <TableColumn prefWidth="69.66667175292969" text="Views" />
-            <TableColumn minWidth="7.666656494140625" prefWidth="72.33334350585938" text="Likes" />
-            <TableColumn minWidth="7.666656494140625" prefWidth="75.66665649414062" text="Comments" />
-            <TableColumn minWidth="7.666656494140625" prefWidth="94.66665649414062" text="Performance" />
+            <TableColumn fx:id="titleColumn" prefWidth="83.0" text="Title" />
+            <TableColumn fx:id="viewColumn" prefWidth="69.66667175292969" text="Views" />
+            <TableColumn fx:id="likeColumn" minWidth="7.666656494140625" prefWidth="72.33334350585938" text="Likes" />
+            <TableColumn fx:id="commentsColumn" minWidth="7.666656494140625" prefWidth="75.66665649414062" text="Comments" />
+            <TableColumn fx:id="performanceColumn" minWidth="7.666656494140625" prefWidth="94.66665649414062" text="Performance" />
          </columns>
       </TableView>
-      <Button layoutX="469.0" layoutY="277.0" mnemonicParsing="false" text="Finalize Suggestions">
+      <Button layoutX="469.0" layoutY="277.0" mnemonicParsing="false" onAction="#onFinalize" text="Finalize Suggestions">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="590.0" layoutY="21.0" mnemonicParsing="false" text="Back">
+      <Button layoutX="590.0" layoutY="21.0" mnemonicParsing="false" onAction="#onBack" text="Back">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
+      <Label fx:id="massageLabel" alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
          <effect>
             <Glow />
          </effect>
       </Label>
-      <Button layoutX="427.0" layoutY="180.0" mnemonicParsing="false" text="Analyze">
+      <Button layoutX="427.0" layoutY="180.0" mnemonicParsing="false" onAction="#onAnalyze" text="Analyze">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <DatePicker layoutX="453.0" layoutY="88.0" promptText="Start Date" />
-      <DatePicker layoutX="454.0" layoutY="124.0" promptText="End Date" />
-      <BarChart layoutX="14.0" layoutY="258.0" prefHeight="113.0" prefWidth="168.0" title="Bar chart">
+      <DatePicker fx:id="startDateBox" layoutX="453.0" layoutY="88.0" promptText="Start Date" />
+      <DatePicker fx:id="endDateBox" layoutX="454.0" layoutY="124.0" promptText="End Date" />
+      <BarChart fx:id="barChart" layoutX="14.0" layoutY="258.0" prefHeight="113.0" prefWidth="168.0" title="Bar chart">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -59,8 +59,8 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <TextField layoutX="26.0" layoutY="224.0" promptText="Input of new topics " />
-      <Button layoutX="197.0" layoutY="224.0" mnemonicParsing="false" text="Add Topic">
+      <TextField fx:id="inputBox" layoutX="26.0" layoutY="224.0" promptText="Input of new topics " />
+      <Button layoutX="197.0" layoutY="224.0" mnemonicParsing="false" onAction="#onAdd" text="Add Topic">
          <font>
             <Font size="13.0" />
          </font>

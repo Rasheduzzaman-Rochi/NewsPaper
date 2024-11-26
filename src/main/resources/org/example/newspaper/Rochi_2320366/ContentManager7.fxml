@@ -10,41 +10,41 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.ContentManager7">
    <children>
       <Label layoutX="15.0" layoutY="8.0" text="Content Manager (online)">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TableView layoutX="18.0" layoutY="63.0" prefHeight="240.0" prefWidth="387.0">
+      <TableView fx:id="table" layoutX="18.0" layoutY="63.0" prefHeight="240.0" prefWidth="387.0">
          <columns>
-            <TableColumn prefWidth="110.66667175292969" text="Title" />
-            <TableColumn prefWidth="147.66668701171875" text="Current Category" />
-            <TableColumn minWidth="7.666656494140625" prefWidth="129.33331298828125" text="Last Modified Date" />
+            <TableColumn fx:id="titleColumn" prefWidth="110.66667175292969" text="Title" />
+            <TableColumn fx:id="categoryColumn" prefWidth="147.66668701171875" text="Current Category" />
+            <TableColumn fx:id="dateColumn" minWidth="7.666656494140625" prefWidth="129.33331298828125" text="Last Modified Date" />
          </columns>
       </TableView>
-      <Button layoutX="314.0" layoutY="314.0" mnemonicParsing="false" text="Assign Category">
+      <Button layoutX="314.0" layoutY="314.0" mnemonicParsing="false" onAction="#onAssign" text="Assign Category">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="590.0" layoutY="21.0" mnemonicParsing="false" text="Back">
+      <Button layoutX="590.0" layoutY="21.0" mnemonicParsing="false" onAction="#onBack" text="Back">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <ComboBox layoutX="33.0" layoutY="313.0" prefWidth="150.0" promptText="Category" />
-      <Label alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
+      <ComboBox fx:id="categoryComboBox" layoutX="33.0" layoutY="313.0" prefWidth="150.0" promptText="Category" />
+      <Label fx:id="massageLabel" alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
          <effect>
             <Glow />
          </effect>
       </Label>
-      <Button layoutX="205.0" layoutY="313.0" mnemonicParsing="false" text="Select Article">
+      <Button layoutX="205.0" layoutY="313.0" mnemonicParsing="false" onAction="#onSelcet" text="Select Article">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <TreeView layoutX="427.0" layoutY="69.0" prefHeight="232.0" prefWidth="244.0" />
+      <TreeView fx:id="treeView" layoutX="427.0" layoutY="69.0" prefHeight="232.0" prefWidth="244.0" />
    </children>
 </AnchorPane>
