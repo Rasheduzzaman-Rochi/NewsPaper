@@ -17,32 +17,32 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="62.0" prefHeight="240.0" prefWidth="457.0">
+      <TableView fx:id="table" layoutX="14.0" layoutY="62.0" prefHeight="240.0" prefWidth="457.0">
         <columns>
-          <TableColumn prefWidth="75.66666412353516" text="Article ID" />
-            <TableColumn prefWidth="188.33333587646484" text="Title" />
-            <TableColumn prefWidth="116.0" text="Submission Date" />
-            <TableColumn minWidth="7.666656494140625" text="Status" />
+          <TableColumn fx:id="idColumn" prefWidth="84.66667175292969" text="Article ID" />
+            <TableColumn fx:id="titleColumn" prefWidth="180.3333282470703" text="Title" />
+            <TableColumn fx:id="dateColumn" prefWidth="116.0" text="Submission Date" />
+            <TableColumn fx:id="statusColumn" minWidth="7.666656494140625" text="Status" />
         </columns>
       </TableView>
-      <Button layoutX="248.0" layoutY="313.0" mnemonicParsing="false" text="Edit Article">
+      <Button layoutX="248.0" layoutY="313.0" mnemonicParsing="false" onAction="#onEditArticle" text="Edit Article">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="588.0" layoutY="21.0" mnemonicParsing="false" text="Logout">
+      <Button layoutX="591.0" layoutY="21.0" mnemonicParsing="false" onAction="#onBack" text="Back">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <TextArea layoutX="475.0" layoutY="64.0" prefHeight="239.0" prefWidth="199.0" />
-      <Button layoutX="628.0" layoutY="309.0" mnemonicParsing="false" text="Save" />
-      <ComboBox layoutX="26.0" layoutY="313.0" prefWidth="150.0" promptText="Status of the Article" />
-      <Button layoutX="346.0" layoutY="313.0" mnemonicParsing="false" text="Confirm Approval">
+      <TextArea fx:id="textArea" layoutX="475.0" layoutY="64.0" prefHeight="239.0" prefWidth="199.0" promptText="Article edit" />
+      <Button layoutX="628.0" layoutY="309.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
+      <ComboBox fx:id="statusComboBox" layoutX="26.0" layoutY="313.0" prefWidth="150.0" promptText="Status of the Article" />
+      <Button layoutX="346.0" layoutY="313.0" mnemonicParsing="false" onAction="#onConfirm" text="Confirm Approval">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
+      <Label fx:id="massageLabel" alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
          <effect>
             <Glow />
          </effect>

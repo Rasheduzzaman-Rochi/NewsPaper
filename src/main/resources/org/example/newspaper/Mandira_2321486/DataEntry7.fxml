@@ -6,9 +6,9 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.DataEntry7">
    <children>
@@ -17,26 +17,29 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="600.0" layoutY="32.0" mnemonicParsing="false" text="Log out">
+      <Button layoutX="600.0" layoutY="32.0" mnemonicParsing="false" onAction="#backButton" text="Back">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <TableView layoutX="23.0" layoutY="101.0" prefHeight="208.0" prefWidth="376.0">
+      <TableView fx:id="Table" layoutX="23.0" layoutY="101.0" prefHeight="208.0" prefWidth="376.0">
         <columns>
-          <TableColumn prefWidth="111.33330726623535" text="Article Title" />
-          <TableColumn prefWidth="147.33338928222656" text="Assigned Reporter" />
-            <TableColumn prefWidth="115.3333740234375" text="Status" />
+          <TableColumn fx:id="titleCol" prefWidth="111.33330726623535" text="Article Title" />
+          <TableColumn fx:id="assignedReporterCol" prefWidth="147.33338928222656" text="Assigned Reporter" />
+            <TableColumn fx:id="statusCol" prefWidth="115.3333740234375" text="Status" />
         </columns>
       </TableView>
-      <Button layoutX="23.0" layoutY="59.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="107.0" text="Contact Reporter" />
-      <RadioButton layoutX="157.0" layoutY="341.0" mnemonicParsing="false" text="Email" />
-      <RadioButton layoutX="231.0" layoutY="341.0" mnemonicParsing="false" text="Chat" />
-      <RadioButton layoutX="300.0" layoutY="341.0" mnemonicParsing="false" text="Call" />
+      <Button layoutX="23.0" layoutY="59.0" mnemonicParsing="false" onAction="#contactReporterButton" prefHeight="27.0" prefWidth="107.0" text="Contact Reporter" />
+      <RadioButton layoutX="157.0" layoutY="341.0" mnemonicParsing="false" text="Email">
+         <toggleGroup>
+            <ToggleGroup fx:id="communication" />
+         </toggleGroup></RadioButton>
+      <RadioButton layoutX="231.0" layoutY="341.0" mnemonicParsing="false" text="Chat" toggleGroup="$communication" />
+      <RadioButton layoutX="300.0" layoutY="341.0" mnemonicParsing="false" text="Call" toggleGroup="$communication" />
       <Label layoutX="23.0" layoutY="337.0" prefHeight="25.0" prefWidth="134.0" text="Communication Mathod" />
-      <TextArea layoutX="411.0" layoutY="101.0" prefHeight="180.0" prefWidth="234.0" promptText="Composing A Massage To The Reporter" />
-      <Button layoutX="554.0" layoutY="296.0" mnemonicParsing="false" text="Send Massage" />
+      <TextArea fx:id="reporterTextArea" layoutX="411.0" layoutY="101.0" prefHeight="180.0" prefWidth="234.0" promptText="Composing A Massage To The Reporter" />
+      <Button layoutX="554.0" layoutY="296.0" mnemonicParsing="false" onAction="#sendMassageButton" text="Send Massage" />
       <Label layoutX="411.0" layoutY="341.0" prefHeight="27.0" prefWidth="234.0" text="Response Status" />
-      <Button layoutX="559.0" layoutY="396.0" mnemonicParsing="false" text="Save Updates" />
+      <Button layoutX="559.0" layoutY="396.0" mnemonicParsing="false" onAction="#saveUpdatesButton" text="Save Updates" />
    </children>
 </AnchorPane>
