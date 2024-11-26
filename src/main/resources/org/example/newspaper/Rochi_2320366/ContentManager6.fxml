@@ -10,46 +10,46 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.ContentManager6">
    <children>
       <Label layoutX="15.0" layoutY="8.0" text="Content Manager (online)">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TableView layoutX="242.0" layoutY="73.0" prefHeight="240.0" prefWidth="423.0">
+      <TableView fx:id="table" layoutX="242.0" layoutY="73.0" prefHeight="240.0" prefWidth="423.0">
          <columns>
-            <TableColumn prefWidth="133.33334350585938" text="Title" />
-            <TableColumn prefWidth="134.66665649414062" text="Uploader" />
-            <TableColumn minWidth="7.666656494140625" prefWidth="154.66665649414062" text="Upload Date" />
+            <TableColumn fx:id="titleColumn" prefWidth="133.33334350585938" text="Title" />
+            <TableColumn fx:id="uploaderColumn" prefWidth="134.66665649414062" text="Uploader" />
+            <TableColumn fx:id="dateColumn" minWidth="7.666656494140625" prefWidth="154.66665649414062" text="Upload Date" />
          </columns>
       </TableView>
-      <Button layoutX="242.0" layoutY="334.0" mnemonicParsing="false" text="View Draft">
+      <Button layoutX="242.0" layoutY="334.0" mnemonicParsing="false" onAction="#onViewDraft" text="View Draft">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="592.0" layoutY="21.0" mnemonicParsing="false" text="Back ">
+      <Button layoutX="592.0" layoutY="21.0" mnemonicParsing="false" onAction="#onBack" text="Back ">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="441.0" layoutY="333.0" mnemonicParsing="false" text="Approve and Move to Queue">
+      <Button layoutX="441.0" layoutY="333.0" mnemonicParsing="false" onAction="#onApprove" text="Approve and Move to Queue">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
+      <Label fx:id="massageLabel" alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
          <effect>
             <Glow />
          </effect>
       </Label>
-      <Button layoutX="58.0" layoutY="165.0" mnemonicParsing="false" text="Schedule Meeting">
+      <Button layoutX="58.0" layoutY="165.0" mnemonicParsing="false" onAction="#onSchedule" text="Schedule Meeting">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <DatePicker layoutX="37.0" layoutY="85.0" promptText="Meeting Date" />
-      <TextField layoutX="37.0" layoutY="121.0" prefHeight="25.0" prefWidth="175.0" promptText="Meeting Agenda" />
+      <DatePicker fx:id="dateBox" layoutX="37.0" layoutY="85.0" promptText="Meeting Date" />
+      <TextField fx:id="meetingBox" layoutX="37.0" layoutY="121.0" prefHeight="25.0" prefWidth="175.0" promptText="Meeting Agenda" />
    </children>
 </AnchorPane>
