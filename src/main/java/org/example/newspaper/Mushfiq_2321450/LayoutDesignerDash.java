@@ -1,49 +1,60 @@
 package org.example.newspaper.Mushfiq_2321450;
 
 import javafx.event.ActionEvent;
-
-import java.awt.*;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
 public class LayoutDesignerDash {
-    @javafx.fxml.FXML
-    private Label layoutDesigner;
-    @javafx.fxml.FXML
+
+    @FXML
     private Label dashboard;
 
-    @javafx.fxml.FXML
-    public void OnEditPageLayoutButtonClick(ActionEvent actionEvent) {
+    @FXML
+    private Label layoutDesigner;
+
+    @FXML
+    void OnEditArticleButtonClick(ActionEvent event) {
+
     }
 
-    @javafx.fxml.FXML
-    public void OnEditHeadlinesButtonClick(ActionEvent actionEvent) {
+    @FXML
+    void OnEditHeadlinesButtonClick(ActionEvent event) {
+
     }
 
-    @javafx.fxml.FXML
-    public void OnEditArticleButtonClick(ActionEvent actionEvent) {
+    @FXML
+    void OnEditPageAdvertisementsButtonClick(ActionEvent event) {
+
     }
 
-    @javafx.fxml.FXML
-    public void OnEditPageAdvertisementsButtonClick(ActionEvent actionEvent) {
+    @FXML
+    void OnEditPageLayoutButtonClick(ActionEvent event) {
+
     }
 
-    @javafx.fxml.FXML
-    public void OnSelectBestArticleButtonClick(ActionEvent actionEvent) {
+    @FXML
+    void OnLogoutButtonClick(ActionEvent event) {
+
     }
 
-    @javafx.fxml.FXML
-    public void OnReviewLayoutsButtonClick(ActionEvent actionEvent) {
+    @FXML
+    void OnReviewLayoutsButtonClick(ActionEvent event) {
+
     }
 
-    @javafx.fxml.FXML
-    public void OnSelectPageResolutionButtonClick(ActionEvent actionEvent) {
+    @FXML
+    void OnSelectBestArticleButtonClick(ActionEvent event) {
+
     }
 
-    @javafx.fxml.FXML
-    public void OnSelectPaperTypeButtonClick(ActionEvent actionEvent) {
+    @FXML
+    void OnSelectPageResolutionButtonClick(ActionEvent event) {
+
     }
 
+    @FXML
+    void OnSelectPaperTypeButtonClick(ActionEvent event) {
 
-    @javafx.fxml.FXML
-    public void OnLogoutButtonClick(ActionEvent actionEvent) {
     }
+
 }

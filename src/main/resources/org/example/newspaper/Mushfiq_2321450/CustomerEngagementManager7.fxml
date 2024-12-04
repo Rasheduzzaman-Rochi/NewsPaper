@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mushfiq_2321450.CustomerEngagementManager7">
    <children>
       <Label fx:id="label" layoutX="243.0" layoutY="7.0" text="Feedback Management">
@@ -15,7 +14,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="tableView" layoutX="24.0" layoutY="43.0" prefHeight="292.0" prefWidth="640.0">
+      <TableView fx:id="tableView" layoutX="29.0" layoutY="80.0" prefHeight="292.0" prefWidth="640.0">
         <columns>
           <TableColumn fx:id="idCol" prefWidth="120.8000545501709" text="Feedback ID" />
           <TableColumn fx:id="nameCol" prefWidth="136.0" text="Customer Name" />
@@ -23,10 +22,11 @@
             <TableColumn fx:id="issueCol" prefWidth="254.39999389648438" text="Issue Summary" />
         </columns>
       </TableView>
-      <Button layoutX="271.0" layoutY="372.0" mnemonicParsing="false" onAction="#OnAssignButtonClick" prefHeight="26.0" prefWidth="141.0" text="Assign">
+      <Button layoutX="271.0" layoutY="392.0" mnemonicParsing="false" onAction="#OnAssignButtonClick" prefHeight="26.0" prefWidth="141.0" text="Assign">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
+      <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#OnBackButtonClick" text="Back" />
    </children>
 </AnchorPane>

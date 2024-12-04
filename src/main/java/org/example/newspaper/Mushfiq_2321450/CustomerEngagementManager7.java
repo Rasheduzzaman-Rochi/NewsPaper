@@ -22,4 +22,8 @@ public class CustomerEngagementManager7 {
     @javafx.fxml.FXML
     public void OnAssignButtonClick(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void OnBackButtonClick(ActionEvent actionEvent) {
+    }
 }

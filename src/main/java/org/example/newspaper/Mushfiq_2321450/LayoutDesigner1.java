@@ -1,64 +1,56 @@
 package org.example.newspaper.Mushfiq_2321450;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.ComboBox;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
+import javafx.scene.control.Label;
 
 public class LayoutDesigner1 {
-    @javafx.fxml.FXML
-    private ComboBox comboBoxShapes;
-    @javafx.fxml.FXML
-    private ComboBox comboBoxFontColour;
-    @javafx.fxml.FXML
-    private ComboBox comboBoxFontSize;
-    @javafx.fxml.FXML
+
+    @FXML
     private Canvas canvas;
-    @javafx.fxml.FXML
+
+    @FXML
+    private ComboBox<?> comboBoxFontColour;
+
+    @FXML
+    private ComboBox<?> comboBoxFontSize;
+
+    @FXML
+    private ComboBox<?> comboBoxShapes;
+
+    @FXML
     private Label labelText;
 
-    @javafx.fxml.FXML
-    public void OnTemplate2ButtonClick(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void OnTemplate3ButtonClick(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void OnTemplate1ButtonClick(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void OnPrintButtonClick(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void OnSaveChangesButtonClick(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void OnBackButtonClick(ActionEvent actionEvent) {
-    }
-
-
-    public void OnTemplate1ButtonClick(javafx.event.ActionEvent actionEvent) {
-    }
-
-    public void OnTemplate2ButtonClick(javafx.event.ActionEvent actionEvent) {
-    }
-
-    public void OnTemplate3ButtonClick(javafx.event.ActionEvent actionEvent) {
+    @FXML
+    void OnBackButtonClick(ActionEvent event) {
 
     }
 
-    public void OnSaveChangesButtonClick(javafx.event.ActionEvent actionEvent) {
+    @FXML
+    void OnPrintButtonClick(ActionEvent event) {
+
     }
 
-    public void OnPrintButtonClick(javafx.event.ActionEvent actionEvent) {
+    @FXML
+    void OnSaveChangesButtonClick(ActionEvent event) {
+
     }
 
+    @FXML
+    void OnTemplate1ButtonClick(ActionEvent event) {
 
-    public void OnBackButtonClick(javafx.event.ActionEvent actionEvent) {
     }
+
+    @FXML
+    void OnTemplate2ButtonClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void OnTemplate3ButtonClick(ActionEvent event) {
+
+    }
+
 }

@@ -1,41 +1,36 @@
 package org.example.newspaper.Mushfiq_2321450;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
 
-import java.awt.event.ActionEvent;
-
 public class LayoutDesigner8 {
-    @javafx.fxml.FXML
+
+    @FXML
+    private ComboBox<?> comboBox;
+
+    @FXML
     private Pane pane;
-    @javafx.fxml.FXML
-    private ComboBox comboBox;
 
-    @javafx.fxml.FXML
-    public void OnSaveButtonClick(ActionEvent actionEvent) {
+    @FXML
+    void OnApplyButtonClick(ActionEvent event) {
+
     }
 
-    @javafx.fxml.FXML
-    public void OnApplyButtonClick(ActionEvent actionEvent) {
+    @FXML
+    void OnBackButtonClick(ActionEvent event) {
+
     }
 
-    @javafx.fxml.FXML
-    public void OnBackButtonClick(ActionEvent actionEvent) {
+    @FXML
+    void OnOpenLayoutButtonClick(ActionEvent event) {
+
     }
 
-    @javafx.fxml.FXML
-    public void OnOpenLayoutButtonClick(ActionEvent actionEvent) {
+    @FXML
+    void OnSaveButtonClick(ActionEvent event) {
+
     }
 
-    public void OnOpenLayoutButtonClick(javafx.event.ActionEvent actionEvent) {
-    }
-
-    public void OnBackButtonClick(javafx.event.ActionEvent actionEvent) {
-    }
-
-    public void OnApplyButtonClick(javafx.event.ActionEvent actionEvent) {
-    }
-
-    public void OnSaveButtonClick(javafx.event.ActionEvent actionEvent) {
-    }
 }
