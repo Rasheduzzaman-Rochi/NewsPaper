@@ -31,6 +31,10 @@ public class Editor2 {
 
     @javafx.fxml.FXML
     public void onEdit(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void onBack(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("EditorDash.fxml"));
             Scene scene = new Scene(root);
@@ -40,10 +44,6 @@ public class Editor2 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    @javafx.fxml.FXML
-    public void onBack(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
