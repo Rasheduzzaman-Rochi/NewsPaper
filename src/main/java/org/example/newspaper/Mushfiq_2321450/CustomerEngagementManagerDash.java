@@ -20,7 +20,7 @@ public class CustomerEngagementManagerDash {
     private Label label2;
 
     @FXML
-    void OnAnalyticsButtonClick(ActionEvent actionEvent) {
+    public void OnAnalyticsButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager8.fxml"));
             Scene scene = new Scene(root);
@@ -34,7 +34,7 @@ public class CustomerEngagementManagerDash {
     }
 
     @FXML
-    void OnContentManagementButtonClick(ActionEvent actionEvent) {
+    public void OnContentManagementButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager5.fxml"));
             Scene scene = new Scene(root);
@@ -48,7 +48,7 @@ public class CustomerEngagementManagerDash {
     }
 
     @FXML
-    void OnCreateSurveyButtonClick(ActionEvent actionEvent) {
+    public void OnCreateSurveyButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager1.fxml"));
             Scene scene = new Scene(root);
@@ -62,7 +62,7 @@ public class CustomerEngagementManagerDash {
     }
 
     @FXML
-    void OnDesignSubscriptionModelButtonClick(ActionEvent actionEvent) {
+    public void OnDesignSubscriptionModelButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager3.fxml"));
             Scene scene = new Scene(root);
@@ -76,7 +76,7 @@ public class CustomerEngagementManagerDash {
     }
 
     @FXML
-    void OnFeedbackManagementButtonClick(ActionEvent actionEvent) {
+    public void OnFeedbackManagementButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager7.fxml"));
             Scene scene = new Scene(root);
@@ -91,7 +91,7 @@ public class CustomerEngagementManagerDash {
     }
 
     @FXML
-    void OnGatherFeedbackButtonClick(ActionEvent actionEvent) {
+    public void OnGatherFeedbackButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager2.fxml"));
             Scene scene = new Scene(root);
@@ -105,7 +105,7 @@ public class CustomerEngagementManagerDash {
     }
 
     @FXML
-    void OnLogoutButtonClick(ActionEvent event) {
+    public void OnLogoutButtonClick(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
             Scene scene = new Scene(root);
@@ -119,7 +119,7 @@ public class CustomerEngagementManagerDash {
     }
 
     @FXML
-    void OnPromoteSubscriptionButtonClick(ActionEvent actionEvent) {
+    public void OnPromoteSubscriptionButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager4.fxml"));
             Scene scene = new Scene(root);
@@ -133,7 +133,7 @@ public class CustomerEngagementManagerDash {
     }
 
     @FXML
-    void OnTrainingManagementButtonClick(ActionEvent actionEvent) {
+    public void OnTrainingManagementButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager6.fxml"));
             Scene scene = new Scene(root);
