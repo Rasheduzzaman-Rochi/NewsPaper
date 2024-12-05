@@ -25,7 +25,7 @@
             <TableColumn fx:id="statusColumn" minWidth="7.666656494140625" text="Status" />
         </columns>
       </TableView>
-      <Button layoutX="248.0" layoutY="313.0" mnemonicParsing="false" onAction="#onEditArticle" text="Edit Article">
+      <Button layoutX="364.0" layoutY="313.0" mnemonicParsing="false" onAction="#onEditArticle" text="Edit Article">
          <font>
             <Font size="13.0" />
          </font>
@@ -36,8 +36,8 @@
          </font></Button>
       <TextArea fx:id="textArea" layoutX="475.0" layoutY="64.0" prefHeight="239.0" prefWidth="199.0" promptText="Article edit" />
       <Button layoutX="628.0" layoutY="309.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
-      <ComboBox fx:id="statusComboBox" layoutX="26.0" layoutY="313.0" prefWidth="150.0" promptText="Status of the Article" />
-      <Button layoutX="346.0" layoutY="313.0" mnemonicParsing="false" onAction="#onConfirm" text="Confirm Approval">
+      <ComboBox fx:id="statusComboBox" layoutX="16.0" layoutY="313.0" prefWidth="150.0" promptText="Status of the Article" />
+      <Button layoutX="407.0" layoutY="356.0" mnemonicParsing="false" onAction="#onConfirm" text="Confirm Approval">
          <font>
             <Font size="13.0" />
          </font>
@@ -47,5 +47,6 @@
             <Glow />
          </effect>
       </Label>
+      <Button layoutX="280.0" layoutY="313.0" mnemonicParsing="false" onAction="#onSave" text="Load" />
    </children>
 </AnchorPane>
