@@ -49,7 +49,7 @@ public class LayoutDesignerDash {
     }
 
     @FXML
-    void OnEditPageAdvertisementsButtonClick(ActionEvent actionEvent) {
+    public void OnEditPageAdvertisementsButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner4.fxml"));
             Scene scene = new Scene(root);
@@ -63,7 +63,7 @@ public class LayoutDesignerDash {
     }
 
     @FXML
-    void OnEditPageLayoutButtonClick(ActionEvent actionEvent) {
+    public void OnEditPageLayoutButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner1.fxml"));
             Scene scene = new Scene(root);
@@ -77,7 +77,7 @@ public class LayoutDesignerDash {
     }
 
     @FXML
-    void OnLogoutButtonClick(ActionEvent actionEvent) {
+    public void OnLogoutButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
             Scene scene = new Scene(root);
@@ -92,7 +92,7 @@ public class LayoutDesignerDash {
     }
 
     @FXML
-    void OnReviewLayoutsButtonClick(ActionEvent actionEvent) {
+    public void OnReviewLayoutsButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner6.fxml"));
             Scene scene = new Scene(root);
@@ -106,7 +106,7 @@ public class LayoutDesignerDash {
     }
 
     @FXML
-    void OnSelectBestArticleButtonClick(ActionEvent actionEvent) {
+    public void OnSelectBestArticleButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner5.fxml"));
             Scene scene = new Scene(root);
@@ -120,7 +120,7 @@ public class LayoutDesignerDash {
     }
 
     @FXML
-    void OnSelectPageResolutionButtonClick(ActionEvent actionEvent) {
+    public void OnSelectPageResolutionButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner7.fxml"));
             Scene scene = new Scene(root);
@@ -134,7 +134,7 @@ public class LayoutDesignerDash {
     }
 
     @FXML
-    void OnSelectPaperTypeButtonClick(ActionEvent actionEvent) {
+    public void OnSelectPaperTypeButtonClick(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner8.fxml"));
             Scene scene = new Scene(root);
