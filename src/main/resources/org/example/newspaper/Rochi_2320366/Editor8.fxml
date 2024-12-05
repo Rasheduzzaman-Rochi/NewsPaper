@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor8">
    <children>
       <Label layoutX="26.0" layoutY="11.0" text="EDITOR (Print)">
          <font>
@@ -32,7 +32,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="588.0" layoutY="21.0" mnemonicParsing="false" text="Logout">
+      <Button layoutX="594.0" layoutY="21.0" mnemonicParsing="false" onAction="#onBack" text="Back">
          <font>
             <Font size="14.0" />
          </font>
