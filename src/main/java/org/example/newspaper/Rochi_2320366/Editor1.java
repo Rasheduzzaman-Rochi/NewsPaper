@@ -59,5 +59,4 @@ public class Editor1 {
     @FXML
     public void onEditArticle(ActionEvent actionEvent) {
     }
-
 }
