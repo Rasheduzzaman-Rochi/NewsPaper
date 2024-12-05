@@ -1,7 +1,14 @@
 package org.example.newspaper.Rochi_2320366;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Editor3 {
     @javafx.fxml.FXML
@@ -28,10 +35,19 @@ public class Editor3 {
     }
 
     @javafx.fxml.FXML
-    public void onLogout(ActionEvent actionEvent) {
+    public void onVerify(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void onVerify(ActionEvent actionEvent) {
+    public void onBack(ActionEvent actionEvent) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("EditorDash.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
