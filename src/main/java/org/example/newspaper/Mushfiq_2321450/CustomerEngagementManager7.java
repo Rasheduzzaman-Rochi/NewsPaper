@@ -1,9 +1,16 @@
 package org.example.newspaper.Mushfiq_2321450;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CustomerEngagementManager7 {
     @javafx.fxml.FXML
@@ -25,5 +32,21 @@ public class CustomerEngagementManager7 {
 
     @javafx.fxml.FXML
     public void OnBackButtonClick(ActionEvent actionEvent) {
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManagerDash.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
+
+
+
+
+
+
