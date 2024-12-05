@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.ReporterDash">
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.ReporterDash">
    <children>
       <Label layoutX="223.0" layoutY="14.0" prefHeight="51.0" prefWidth="237.0" text="Reporter DashBoard">
          <font>
@@ -17,7 +17,7 @@
       <Button layoutX="37.0" layoutY="89.0" mnemonicParsing="false" onAction="#trendingNewsButton" prefHeight="33.0" prefWidth="213.0" text="Trending News And Unique Articles" />
       <Button layoutX="37.0" layoutY="174.0" mnemonicParsing="false" onAction="#reviewArticlesButton" prefHeight="33.0" prefWidth="222.0" text="Write Articles Then Submit For Review" />
       <Button layoutX="37.0" layoutY="257.0" mnemonicParsing="false" onAction="#qualityAndClarityButton" prefHeight="33.0" prefWidth="270.0" text="Improve Quality And Clarity Based On Feedback" />
-      <Button layoutX="37.0" layoutY="338.0" mnemonicParsing="false" onAction="#imagesAndVisuakMaterialsButton" prefHeight="33.0" prefWidth="199.0" text="Share Images And Visual Materials" />
+      <Button layoutX="37.0" layoutY="338.0" mnemonicParsing="false" onAction="#imagesAndVisualMaterialsButton" prefHeight="33.0" prefWidth="199.0" text="Share Images And Visual Materials" />
       <Button layoutX="350.0" layoutY="89.0" mnemonicParsing="false" onAction="#journalisticIntigrityButton" prefHeight="33.0" prefWidth="313.0" text="The Accuracy Of Facts And Maintain Journalistic Intigrity" />
       <Button layoutX="350.0" layoutY="174.0" mnemonicParsing="false" onAction="#informationVariousSourceButton" prefHeight="33.0" prefWidth="235.0" text="Gather Information From Various Sources" />
       <Button layoutX="350.0" layoutY="257.0" mnemonicParsing="false" onAction="#regularMeetingsButton" prefHeight="33.0" prefWidth="182.0" text="Participate In Regular Meetings" />
