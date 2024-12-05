@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mushfiq_2321450.LayoutDesignerDash">
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mushfiq_2321450.LayoutDesignerDash">
    <children>
       <Label fx:id="layoutDesigner" layoutX="169.0" layoutY="14.0" text="LAYOUT DESIGNER">
          <font>
