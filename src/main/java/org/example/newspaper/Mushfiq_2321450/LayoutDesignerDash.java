@@ -23,7 +23,7 @@ public class LayoutDesignerDash {
     @FXML
     public void OnEditArticleButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner3.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/LayoutDesigner3.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -37,7 +37,7 @@ public class LayoutDesignerDash {
     @FXML
     public void OnEditHeadlinesButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner2.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/LayoutDesigner2.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -51,7 +51,7 @@ public class LayoutDesignerDash {
     @FXML
     public void OnEditPageAdvertisementsButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner4.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/LayoutDesigner4.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -65,7 +65,7 @@ public class LayoutDesignerDash {
     @FXML
     public void OnEditPageLayoutButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner1.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/LayoutDesigner1.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -94,7 +94,7 @@ public class LayoutDesignerDash {
     @FXML
     public void OnReviewLayoutsButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner6.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/LayoutDesigner6.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -108,7 +108,7 @@ public class LayoutDesignerDash {
     @FXML
     public void OnSelectBestArticleButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner5.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/LayoutDesigner5.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -122,7 +122,7 @@ public class LayoutDesignerDash {
     @FXML
     public void OnSelectPageResolutionButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner7.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/LayoutDesigner7.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -136,7 +136,7 @@ public class LayoutDesignerDash {
     @FXML
     public void OnSelectPaperTypeButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("LayoutDesigner8.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/LayoutDesigner8.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);

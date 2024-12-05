@@ -22,7 +22,7 @@ public class CustomerEngagementManagerDash {
     @FXML
     public void OnAnalyticsButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager8.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/CustomerEngagementManager8.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -36,7 +36,7 @@ public class CustomerEngagementManagerDash {
     @FXML
     public void OnContentManagementButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager5.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/CustomerEngagementManager5.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -50,7 +50,7 @@ public class CustomerEngagementManagerDash {
     @FXML
     public void OnCreateSurveyButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager1.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/CustomerEngagementManager1.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -64,7 +64,7 @@ public class CustomerEngagementManagerDash {
     @FXML
     public void OnDesignSubscriptionModelButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager3.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/CustomerEngagementManager3.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -78,7 +78,7 @@ public class CustomerEngagementManagerDash {
     @FXML
     public void OnFeedbackManagementButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager7.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/CustomerEngagementManager7.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -93,7 +93,7 @@ public class CustomerEngagementManagerDash {
     @FXML
     public void OnGatherFeedbackButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager2.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/CustomerEngagementManager2.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -121,7 +121,7 @@ public class CustomerEngagementManagerDash {
     @FXML
     public void OnPromoteSubscriptionButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager4.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/CustomerEngagementManager4.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -135,7 +135,7 @@ public class CustomerEngagementManagerDash {
     @FXML
     public void OnTrainingManagementButtonClick(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("CustomerEngagementManager6.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Mushfiq_2321450/CustomerEngagementManager6.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
