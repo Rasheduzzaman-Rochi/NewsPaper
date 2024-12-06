@@ -1,10 +1,17 @@
 package org.example.newspaper.Mandira_2321486;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Reporter3 {
     @javafx.fxml.FXML
@@ -33,14 +40,23 @@ public class Reporter3 {
     }
 
     @javafx.fxml.FXML
-    public void logOutButton(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
     public void addCommentButton(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void reviewButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backButton(ActionEvent actionEvent) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("ReporterDash.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -17,7 +17,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="589.0" layoutY="42.0" mnemonicParsing="false" onAction="#logOutButton" text="Log out">
+      <Button layoutX="598.0" layoutY="42.0" mnemonicParsing="false" onAction="#backButton" text="Back">
          <font>
             <Font size="13.0" />
          </font>
