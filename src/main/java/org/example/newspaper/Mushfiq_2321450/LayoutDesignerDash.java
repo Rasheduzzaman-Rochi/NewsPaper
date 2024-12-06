@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import org.example.newspaper.LoginApplication;
 
 import java.io.IOException;
 import java.util.EventObject;
@@ -77,17 +78,13 @@ public class LayoutDesignerDash {
     }
 
     @FXML
-    public void OnLogoutButtonClick(ActionEvent actionEvent) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+    public void OnLogoutButtonClick(ActionEvent actionEvent) throws IOException {
+            FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("login.fxml"));
+            Parent root = fxmlLoader.load();
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
 
     }
 
