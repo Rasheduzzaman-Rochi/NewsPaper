@@ -4,10 +4,10 @@ import java.time.LocalDate;
 
 public class Reporter1ModelClass {
     String title;
-    Integer id;
+    String id;
     LocalDate date;
 
-    public Reporter1ModelClass(String title, Integer id, LocalDate date) {
+    public Reporter1ModelClass(String title, String id, LocalDate date) {
         this.title = title;
         this.id = id;
         this.date = date;
@@ -21,11 +21,11 @@ public class Reporter1ModelClass {
         this.title = title;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -41,7 +41,7 @@ public class Reporter1ModelClass {
     public String toString() {
         return "Reporter1ModelClass{" +
                 "title='" + title + '\'' +
-                ", id=" + id +
+                ", id='" + id + '\'' +
                 ", date=" + date +
                 '}';
     }
