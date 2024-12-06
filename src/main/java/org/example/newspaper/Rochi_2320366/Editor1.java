@@ -7,14 +7,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.example.newspaper.Mandira_2321486.Reporter1ModelClass;
 
-import java.io.IOException;
+import java.io.*;
+import java.time.LocalDate;
 
 public class Editor1 {
-
-    @javafx.fxml.FXML
-    private ComboBox statusComboBox;
     @javafx.fxml.FXML
     private Label massageLabel;
     @javafx.fxml.FXML
@@ -24,15 +24,18 @@ public class Editor1 {
     @FXML
     private TableColumn titleColumn;
     @FXML
-    private TableColumn statusColumn;
-    @FXML
     private TableColumn dateColumn;
+    @FXML
+    private TableColumn articleColumn;
     @FXML
     private TableColumn idColumn;
 
     @FXML
     public void initialize() {
-        statusComboBox.getItems().addAll("Approve for Print", "Needs Revision");
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        articleColumn.setCellValueFactory(new PropertyValueFactory<>("article"));
     }
 
     @javafx.fxml.FXML
@@ -58,5 +61,51 @@ public class Editor1 {
 
     @FXML
     public void onEditArticle(ActionEvent actionEvent) {
+        String id = idColumn.getCellData(table.getSelectionModel().getSelectedIndex()).toString();
+        String title = titleColumn.getCellData(table.getSelectionModel().getSelectedIndex()).toString();
+        LocalDate date = LocalDate.parse(dateColumn.getCellData(table.getSelectionModel().getSelectedIndex()).toString());
+        String article = articleColumn.getCellData(table.getSelectionModel().getSelectedIndex()).toString();
+        String line = id + " , " + title + " , " + date + " , " + article;
+        textArea.appendText(line);
+    }
+
+    @FXML
+    public void onLoad(ActionEvent actionEvent) {
+        table.getItems().clear();
+
+        BufferedReader br = null;
+        FileReader fr = null;
+
+        try {
+            fr = new FileReader("Reporter1.txt");
+            br = new BufferedReader(fr);
+
+            while (true) {
+                String line = br.readLine();
+                if (line == null) break;
+
+                String[] data = line.split(",");
+                Reporter1ModelClass user = new Reporter1ModelClass(data[0], data[1], LocalDate.parse(data[2]), data[3]);
+                table.getItems().add(user);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (fr != null) {
+                try {
+                    fr.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
     }
 }

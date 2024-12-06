@@ -48,7 +48,6 @@ public class Reporter1 {
         titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         articleCol.setCellValueFactory(new PropertyValueFactory<>("article"));
-
     }
 
     @javafx.fxml.FXML
@@ -70,7 +69,7 @@ public class Reporter1 {
         String id = idTextField.getText();
         String article = articleTextField.getText();
         LocalDate date = submissionDatePicker.getValue();
-        String line = title +" , " + id +" , "+ date +" , " + article ;
+        String line = id + " , " + title + " , " + date + " , " + article;
         summaryTextArea.appendText(line);
     }
 
@@ -82,7 +81,7 @@ public class Reporter1 {
             bw = new BufferedWriter(new FileWriter("Reporter1.txt"));
 
             for (Reporter1ModelClass u : userList) {
-                bw.write(u.getId() + "," + u.getTitle() + "," + u.getDate() + u.getArticle()+ "\n");
+                bw.write(u.getId() + "," + u.getTitle() + "," + u.getDate() + "," + u.getArticle() + "\n");
             }
 
         } catch (IOException e) {
@@ -102,10 +101,8 @@ public class Reporter1 {
         String article = articleTextField.getText();
 
 
-        Reporter1ModelClass u = new Reporter1ModelClass(title,id,date,article);
+        Reporter1ModelClass u = new Reporter1ModelClass(id,title, date, article);
         table.getItems().addAll(u);
         userList.add(u);
-
-
     }
 }
