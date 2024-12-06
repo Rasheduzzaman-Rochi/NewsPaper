@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.newspaper.Arong_2321464.AdvertisingManager6"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="0.0" prefWidth="38.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.EditorDash">
+   <children>
+      <Label layoutX="41.0" layoutY="14.0" text="Advertising Manager (Print)">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <TextField layoutX="224.0" layoutY="347.0" promptText="Incentive type" />
+      <Button layoutX="595.0" layoutY="26.0" mnemonicParsing="false" text="Logout">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TableView layoutX="41.0" layoutY="50.0" prefHeight="200.0" prefWidth="331.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Name" />
+          <TableColumn prefWidth="82.0" text="Business type" />
+            <TableColumn prefWidth="84.0" text="Advertising history" />
+            <TableColumn prefWidth="89.0" text="Relationship status" />
+        </columns>
+      </TableView>
+      <TextField layoutX="41.0" layoutY="263.0" promptText="Search Bar" />
+      <DatePicker layoutX="41.0" layoutY="293.0" promptText="Time Selector" />
+      <TextField layoutX="41.0" layoutY="326.0" promptText="Discussion point" />
+      <Button layoutX="42.0" layoutY="358.0" mnemonicParsing="false" text="Save" />
+      <Label layoutX="41.0" layoutY="399.0" text="Label" />
+      <TextArea layoutX="457.0" layoutY="75.0" prefHeight="124.0" prefWidth="200.0" />
+      <Button layoutX="389.0" layoutY="250.0" mnemonicParsing="false" text="Button" />
+      <TableView layoutX="457.0" layoutY="209.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <TextField layoutX="292.0" layoutY="280.0" promptText="Advertising solution" />
+      <DropdownButton layoutX="393.0" layoutY="309.0">
+          <items>
+              <MenuItem text="Choice 1" />
+              <MenuItem text="Choice 2" />
+              <MenuItem text="Choice 3" />
+          </items>
+      </DropdownButton>
+      <Button layoutX="389.0" layoutY="334.0" mnemonicParsing="false" text="Submit" />
+      <TextField layoutX="224.0" layoutY="371.0" promptText="Discount percentage" />
+      <TextField layoutX="224.0" layoutY="395.0" promptText="Expiry date" />
+      <Button layoutX="379.0" layoutY="371.0" mnemonicParsing="false" text=" Advertiser" />
+      <Button layoutX="99.0" layoutY="397.0" mnemonicParsing="false" text=" Adjust strategies" />
+   </children>
 </AnchorPane>
