@@ -43,6 +43,12 @@ public class LoginController {
             Stage stage = (Stage) usernameBox.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
+        } else if ("Data Entry".equals(username) && "mandira".equals(password)) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Mandira_2321486/ReporterDash.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameBox.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
         } else if ("Customer Engagement Manager".equals(username) && "mushfiq".equals(password)) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Mushfiq_2321450/CustomerEngagementManagerDash.fxml"));
             Parent root = loader.load();
