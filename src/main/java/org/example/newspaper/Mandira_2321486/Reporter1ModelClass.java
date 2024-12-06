@@ -3,8 +3,8 @@ package org.example.newspaper.Mandira_2321486;
 import java.time.LocalDate;
 
 public class Reporter1ModelClass {
-    String title;
-    String id;
+    private String title;
+    private String id;
     LocalDate date;
 
     public Reporter1ModelClass(String title, String id, LocalDate date) {
