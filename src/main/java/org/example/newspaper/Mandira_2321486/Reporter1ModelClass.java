@@ -5,12 +5,14 @@ import java.time.LocalDate;
 public class Reporter1ModelClass {
     private String title;
     private String id;
-    LocalDate date;
+    private LocalDate date;
+    private String article;
 
-    public Reporter1ModelClass(String title, String id, LocalDate date) {
+    public Reporter1ModelClass(String title, String id, LocalDate date, String article) {
         this.title = title;
         this.id = id;
         this.date = date;
+        this.article = article;
     }
 
     public String getTitle() {
@@ -37,12 +39,21 @@ public class Reporter1ModelClass {
         this.date = date;
     }
 
+    public String getArticle() {
+        return article;
+    }
+
+    public void setArticle(String article) {
+        this.article = article;
+    }
+
     @Override
     public String toString() {
         return "Reporter1ModelClass{" +
                 "title='" + title + '\'' +
                 ", id='" + id + '\'' +
                 ", date=" + date +
+                ", article='" + article + '\'' +
                 '}';
     }
 }
