@@ -37,7 +37,7 @@
       </TableView>
       <TextField fx:id="subTitleTextField" layoutX="442.0" layoutY="179.0" prefHeight="125.0" prefWidth="189.0" promptText="SubTitle" />
       <TextField fx:id="articleIDTextField" layoutX="442.0" layoutY="62.0" prefHeight="25.0" prefWidth="189.0" promptText="Article ID" />
-      <ComboBox fx:id="filterCategoryComboBox" layoutX="14.0" layoutY="322.0" prefWidth="150.0" promptText="Filter By Category" />
+      <ComboBox fx:id="filterCategoryComboBox" layoutX="14.0" layoutY="322.0" onAction="#filterByCategory" prefWidth="150.0" promptText="Filter By Category" />
       <Button layoutX="182.0" layoutY="322.0" mnemonicParsing="false" onAction="#showButton" text="Show" />
    </children>
 </AnchorPane>
