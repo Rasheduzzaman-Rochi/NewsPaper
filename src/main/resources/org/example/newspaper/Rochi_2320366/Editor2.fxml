@@ -4,26 +4,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor2">
    <children>
       <Label layoutX="26.0" layoutY="11.0" text="EDITOR (Print)">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TableView fx:id="table" layoutX="42.0" layoutY="62.0" prefHeight="240.0" prefWidth="601.0">
-         <columns>
-            <TableColumn fx:id="idColumn" prefWidth="110.66667175292969" text="Article ID" />
-            <TableColumn fx:id="titleBox" prefWidth="373.33331298828125" text="Title" />
-            <TableColumn fx:id="statusBox" minWidth="7.666656494140625" prefWidth="117.66668701171875" text="Status" />
-         </columns>
-      </TableView>
-      <Button layoutX="592.0" layoutY="21.0" mnemonicParsing="false" onAction="#onBack" text="Back">
+      <Button layoutX="592.0" layoutY="16.0" mnemonicParsing="false" onAction="#onBack" text="Back">
          <font>
             <Font size="14.0" />
          </font>
@@ -38,8 +31,20 @@
             <Glow />
          </effect>
       </Label>
-      <TextField fx:id="headlineBox" alignment="CENTER" layoutX="42.0" layoutY="338.0" prefHeight="25.0" prefWidth="317.0" promptText="Edit Headline" />
-      <TextField fx:id="subheadingBox" alignment="CENTER" layoutX="370.0" layoutY="338.0" prefHeight="25.0" prefWidth="273.0" promptText="Edit Subheading" />
-      <Button layoutX="585.0" layoutY="307.0" mnemonicParsing="false" onAction="#onEdit" prefHeight="25.0" prefWidth="52.0" text="Edit" />
+      <Button layoutX="585.0" layoutY="308.0" mnemonicParsing="false" onAction="#onEdit" prefHeight="25.0" prefWidth="52.0" text="Edit" />
+      <TableView fx:id="table" layoutX="24.0" layoutY="57.0" prefHeight="245.0" prefWidth="641.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="90.00000190734863" text="Article ID" />
+            <TableColumn fx:id="titleColumn" prefWidth="188.6666717529297" text="Title" />
+            <TableColumn fx:id="subtitleColumn" prefWidth="241.66668701171875" text="SubTitle" />
+            <TableColumn fx:id="categoryColumn" prefWidth="120.33331298828125" text="Category" />
+         </columns>
+      </TableView>
+      <TextArea fx:id="textArea" layoutX="32.0" layoutY="317.0" prefHeight="92.0" prefWidth="337.0" promptText="Edit Title and Subtitle">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="483.0" layoutY="308.0" mnemonicParsing="false" onAction="#onLoad" prefHeight="25.0" prefWidth="52.0" text="Load" />
    </children>
 </AnchorPane>

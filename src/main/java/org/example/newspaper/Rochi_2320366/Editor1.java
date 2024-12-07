@@ -56,7 +56,6 @@ public class Editor1 {
 
     @FXML
     public void onSave(ActionEvent actionEvent) {
-        // Get the content from the text area
         String updatedContent = textArea.getText().trim();
 
         if (updatedContent.isEmpty()) {
@@ -66,9 +65,9 @@ public class Editor1 {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(reporterFilePath, true))) {
             writer.write(updatedContent);
-            writer.newLine(); // Add a newline after saving
+            writer.newLine();
             massageLabel.setText("Changes saved successfully!");
-            textArea.clear(); // Clear the text area after saving
+            textArea.clear();
         } catch (IOException e) {
             e.printStackTrace();
             massageLabel.setText("Error saving changes!");
@@ -82,7 +81,6 @@ public class Editor1 {
 
             String line;
             while ((line = reader.readLine()) != null) {
-                // Write each line from Reporter1.txt to Editor1.txt
                 writer.write(line);
                 writer.newLine();
             }
@@ -102,7 +100,6 @@ public class Editor1 {
             return;
         }
 
-        // Extract selected data and display it in the text area
         Reporter1ModelClass selectedArticle = table.getItems().get(selectedIndex);
         String id = selectedArticle.getId();
         String title = selectedArticle.getTitle();
