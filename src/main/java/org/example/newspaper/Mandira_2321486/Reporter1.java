@@ -76,7 +76,6 @@ public class Reporter1 {
     @javafx.fxml.FXML
     public void SaveButton(ActionEvent actionEvent) throws IOException {
         BufferedWriter bw = null;
-
         try {
             bw = new BufferedWriter(new FileWriter("Reporter1.txt"));
 
