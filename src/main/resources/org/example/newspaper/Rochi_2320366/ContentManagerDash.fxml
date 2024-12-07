@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.ContentManagerDash">
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.ContentManagerDash">
    <children>
       <Label layoutX="187.0" layoutY="16.0" text="Content Manager (online)">
          <font>

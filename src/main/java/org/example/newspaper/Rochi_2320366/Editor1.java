@@ -15,20 +15,22 @@ import java.io.*;
 import java.time.LocalDate;
 
 public class Editor1 {
-    @javafx.fxml.FXML
+    @FXML
     private Label massageLabel;
-    @javafx.fxml.FXML
-    private TableView table;
+    @FXML
+    private TableView<Reporter1ModelClass> table;
     @FXML
     private TextArea textArea;
     @FXML
-    private TableColumn titleColumn;
+    private TableColumn<Reporter1ModelClass, String> titleColumn;
     @FXML
-    private TableColumn dateColumn;
+    private TableColumn<Reporter1ModelClass, LocalDate> dateColumn;
     @FXML
-    private TableColumn articleColumn;
+    private TableColumn<Reporter1ModelClass, String> articleColumn;
     @FXML
-    private TableColumn idColumn;
+    private TableColumn<Reporter1ModelClass, String> idColumn;
+
+    private final String filePath = "Reporter1.txt";
 
     @FXML
     public void initialize() {
@@ -38,7 +40,7 @@ public class Editor1 {
         articleColumn.setCellValueFactory(new PropertyValueFactory<>("article"));
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void onBack(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("EditorDash.fxml"));
@@ -53,59 +55,64 @@ public class Editor1 {
 
     @FXML
     public void onSave(ActionEvent actionEvent) {
+        String updatedContent = textArea.getText().trim();
+
+        if (updatedContent.isEmpty()) {
+            massageLabel.setText("Text area is empty. Nothing to save!");
+            return;
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
+            writer.write(updatedContent);
+            writer.newLine();
+            massageLabel.setText("Changes saved successfully!");
+            textArea.clear();
+        } catch (IOException e) {
+            e.printStackTrace();
+            massageLabel.setText("Error saving changes!");
+        }
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void onConfirm(ActionEvent actionEvent) {
+
     }
 
     @FXML
     public void onEditArticle(ActionEvent actionEvent) {
-        String id = idColumn.getCellData(table.getSelectionModel().getSelectedIndex()).toString();
-        String title = titleColumn.getCellData(table.getSelectionModel().getSelectedIndex()).toString();
-        LocalDate date = LocalDate.parse(dateColumn.getCellData(table.getSelectionModel().getSelectedIndex()).toString());
-        String article = articleColumn.getCellData(table.getSelectionModel().getSelectedIndex()).toString();
-        String line = id + " , " + title + " , " + date + " , " + article;
-        textArea.appendText(line);
+        int selectedIndex = table.getSelectionModel().getSelectedIndex();
+        if (selectedIndex == -1) {
+            massageLabel.setText("Please select an article to edit!");
+            return;
+        }
+
+        Reporter1ModelClass selectedArticle = table.getItems().get(selectedIndex);
+        String id = selectedArticle.getId();
+        String title = selectedArticle.getTitle();
+        LocalDate date = selectedArticle.getDate();
+        String article = selectedArticle.getArticle();
+
+        String line = id + ", " + title + ", " + date + ", " + article;
+        textArea.setText(line);
     }
 
     @FXML
     public void onLoad(ActionEvent actionEvent) {
         table.getItems().clear();
 
-        BufferedReader br = null;
-        FileReader fr = null;
-
-        try {
-            fr = new FileReader("Reporter1.txt");
-            br = new BufferedReader(fr);
-
-            while (true) {
-                String line = br.readLine();
-                if (line == null) break;
-
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
-                Reporter1ModelClass user = new Reporter1ModelClass(data[0], data[1], LocalDate.parse(data[2]), data[3]);
-                table.getItems().add(user);
+                if (data.length == 4) {
+                    Reporter1ModelClass user = new Reporter1ModelClass(data[0], data[1], LocalDate.parse(data[2]), data[3]);
+                    table.getItems().add(user);
+                }
             }
+            massageLabel.setText("Data loaded successfully!");
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (fr != null) {
-                try {
-                    fr.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            massageLabel.setText("Error loading data!");
         }
-
     }
 }
