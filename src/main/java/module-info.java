@@ -2,10 +2,10 @@ module org.example.newspaper {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
+    requires java.logging;
 
 
-
-   opens org.example.newspaper to javafx.fxml;
+    opens org.example.newspaper to javafx.fxml;
    exports org.example.newspaper;
    exports org.example.newspaper.Rochi_2320366;
    opens org.example.newspaper.Rochi_2320366 to javafx.fxml;
