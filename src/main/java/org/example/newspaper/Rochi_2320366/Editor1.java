@@ -30,7 +30,8 @@ public class Editor1 {
     @FXML
     private TableColumn<Reporter1ModelClass, String> idColumn;
 
-    private final String filePath = "Reporter1.txt";
+    private final String reporterFilePath = "Reporter1.txt";
+    private final String editorFilePath = "Editor1.txt";
 
     @FXML
     public void initialize() {
@@ -55,6 +56,7 @@ public class Editor1 {
 
     @FXML
     public void onSave(ActionEvent actionEvent) {
+        // Get the content from the text area
         String updatedContent = textArea.getText().trim();
 
         if (updatedContent.isEmpty()) {
@@ -62,11 +64,11 @@ public class Editor1 {
             return;
         }
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(reporterFilePath, true))) {
             writer.write(updatedContent);
-            writer.newLine();
+            writer.newLine(); // Add a newline after saving
             massageLabel.setText("Changes saved successfully!");
-            textArea.clear();
+            textArea.clear(); // Clear the text area after saving
         } catch (IOException e) {
             e.printStackTrace();
             massageLabel.setText("Error saving changes!");
@@ -75,7 +77,21 @@ public class Editor1 {
 
     @FXML
     public void onConfirm(ActionEvent actionEvent) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(reporterFilePath));
+             BufferedWriter writer = new BufferedWriter(new FileWriter(editorFilePath))) {
 
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Write each line from Reporter1.txt to Editor1.txt
+                writer.write(line);
+                writer.newLine();
+            }
+
+            massageLabel.setText("Updated data from Reporter1.txt saved to Editor1.txt!");
+        } catch (IOException e) {
+            e.printStackTrace();
+            massageLabel.setText("Error saving updated data to Editor1.txt!");
+        }
     }
 
     @FXML
@@ -86,6 +102,7 @@ public class Editor1 {
             return;
         }
 
+        // Extract selected data and display it in the text area
         Reporter1ModelClass selectedArticle = table.getItems().get(selectedIndex);
         String id = selectedArticle.getId();
         String title = selectedArticle.getTitle();
@@ -100,7 +117,7 @@ public class Editor1 {
     public void onLoad(ActionEvent actionEvent) {
         table.getItems().clear();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(reporterFilePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
