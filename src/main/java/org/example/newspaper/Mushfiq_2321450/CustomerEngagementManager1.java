@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import org.example.newspaper.Mandira_2321486.Reporter1ModelClass;
+
 
 
 import java.io.IOException;
@@ -96,10 +96,21 @@ public class CustomerEngagementManager1 {
         LocalDate date = datePicker.getValue();
         String audience = comboBox.getValue();
 
-        if (name.isBlank() || description == null || date == null  || audience == null){
+        if (name.isBlank() || description == null || date == null  || audience == null) {
             onAddLabel.setText("Enter valid inputs.");
             return;
+
+
         }
+        else {
+            onAddLabel.setText("");
+
+        }
+
+        nameTF.clear();
+        descriptionTF.clear();
+        datePicker.setValue(null);
+        comboBox.setValue(null);
 
         CustomerEngagementManager1ModelClass u = new CustomerEngagementManager1ModelClass(name, description, date, audience);
         tableView.getItems().add(u);
@@ -107,5 +118,7 @@ public class CustomerEngagementManager1 {
 
 
 
-    }
+            }
+
+
 }
