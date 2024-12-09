@@ -26,12 +26,7 @@
             <Font size="14.0" />
          </font></Button>
       <TextArea fx:id="textArea" layoutX="475.0" layoutY="64.0" prefHeight="239.0" prefWidth="199.0" promptText="Article edit" />
-      <Button layoutX="628.0" layoutY="309.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
-      <Button layoutX="339.0" layoutY="309.0" mnemonicParsing="false" onAction="#onConfirm" text="Confirm Approval">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
+      <Button layoutX="541.0" layoutY="341.0" mnemonicParsing="false" onAction="#onSave" prefHeight="25.0" prefWidth="47.0" text="Save" />
       <Label fx:id="massageLabel" alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
          <effect>
             <Glow />
