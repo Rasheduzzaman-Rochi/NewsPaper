@@ -7,15 +7,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.example.newspaper.Mandira_2321486.Reporter1ModelClass;
 
 import java.io.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Editor1 {
     @FXML
@@ -59,32 +60,10 @@ public class Editor1 {
     @FXML
     public void onSave(ActionEvent actionEvent) throws IOException {
         ObservableList<Reporter1ModelClass> currentItems = table.getItems();
-        List<Reporter1ModelClass> fileData = new ArrayList<>();
-
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Reporter1.bin"))) {
-            while (true) {
-                try {
-                    Reporter1ModelClass user = (Reporter1ModelClass) ois.readObject();
-                    fileData.add(user);
-                } catch (EOFException e) {
-                    break;
-                }
-            }
-        } catch (FileNotFoundException e) {
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-            massageLabel.setText("Error reading existing data.");
-            return;
-        }
-
-        for (Reporter1ModelClass newItem : currentItems) {
-            fileData.removeIf(existingItem -> existingItem.getId().equals(newItem.getId()));
-            fileData.add(newItem);
-        }
 
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Reporter1.bin"))) {
-            for (Reporter1ModelClass updatedItem : fileData) {
-                oos.writeObject(updatedItem);
+            for (Reporter1ModelClass item : currentItems) {
+                oos.writeObject(item);
             }
             massageLabel.setText("Data saved successfully with updates.");
         } catch (IOException e) {
