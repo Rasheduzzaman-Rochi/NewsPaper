@@ -6,16 +6,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import org.example.newspaper.Mandira_2321486.Reporter1ModelClass;
 import org.example.newspaper.Mandira_2321486.Reporter2ModelClass;
 
 import java.io.*;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Editor2 {
     @javafx.fxml.FXML
