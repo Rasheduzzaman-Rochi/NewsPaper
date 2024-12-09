@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.newspaper.LoginApplication;
 
 import java.io.IOException;
 
@@ -26,7 +27,7 @@ public class ReporterDash {
     @javafx.fxml.FXML
     public void reviewArticlesButton(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("Reporte2.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Reporter2.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -51,16 +52,13 @@ public class ReporterDash {
     }
 
     @javafx.fxml.FXML
-    public void logOutButton(ActionEvent actionEvent) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void logOutButton(ActionEvent actionEvent) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("login.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML

@@ -9,22 +9,20 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Reporter1 {
 
     @javafx.fxml.FXML
-    private TableColumn titleCol;
+    private TableColumn<Reporter1ModelClass,String> titleCol;
     @javafx.fxml.FXML
-    private TableColumn dateCol;
+    private TableColumn<Reporter1ModelClass,LocalDate> dateCol;
     @javafx.fxml.FXML
-    private TableColumn articleIDCol;
+    private TableColumn<Reporter1ModelClass,String> articleIDCol;
     @javafx.fxml.FXML
-    private TableView table;
+    private TableView<Reporter1ModelClass> table;
     @javafx.fxml.FXML
     private TextArea summaryTextArea;
     @javafx.fxml.FXML
@@ -37,6 +35,7 @@ public class Reporter1 {
     private Label massageLabel;
 
     private ArrayList<Reporter1ModelClass> userList = new ArrayList<>();
+
     @javafx.fxml.FXML
     private TableColumn articleCol;
     @javafx.fxml.FXML
@@ -75,20 +74,23 @@ public class Reporter1 {
 
     @javafx.fxml.FXML
     public void SaveButton(ActionEvent actionEvent) throws IOException {
-        BufferedWriter bw = null;
+        ObjectOutputStream oos = null;
         try {
-            bw = new BufferedWriter(new FileWriter("Reporter1.txt"));
+            oos = new ObjectOutputStream(new FileOutputStream("Reporter1.bin"));
+            for (Reporter1ModelClass u: table.getItems())
+                oos.writeObject(u);
 
-            for (Reporter1ModelClass u : userList) {
-                bw.write(u.getId() + "," + u.getTitle() + "," + u.getDate() + "," + u.getArticle() + "\n");
-            }
-
-        } catch (IOException e) {
-            massageLabel.setText("could not save file!");
+        }
+        catch (IOException e) {
+            massageLabel.setText("Could not save as objects.");
             e.printStackTrace();
-        } finally {
-            if (bw != null)
-                bw.close();
+        }
+        finally {
+            try {
+                if (oos != null) oos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
