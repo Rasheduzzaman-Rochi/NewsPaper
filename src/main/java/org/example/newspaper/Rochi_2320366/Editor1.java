@@ -1,5 +1,6 @@
 package org.example.newspaper.Rochi_2320366;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,8 @@ import org.example.newspaper.Mandira_2321486.Reporter1ModelClass;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Editor1 {
     @FXML
@@ -30,8 +33,7 @@ public class Editor1 {
     @FXML
     private TableColumn<Reporter1ModelClass, String> idColumn;
 
-    private final String reporterFilePath = "Reporter1.txt";
-    private final String editorFilePath = "Editor1.txt";
+    private final String reporterFilePath = "Reporter1.bin";
 
     @FXML
     public void initialize() {
@@ -55,42 +57,42 @@ public class Editor1 {
     }
 
     @FXML
-    public void onSave(ActionEvent actionEvent) {
-        String updatedContent = textArea.getText().trim();
+    public void onSave(ActionEvent actionEvent) throws IOException {
+        ObservableList<Reporter1ModelClass> currentItems = table.getItems();
+        List<Reporter1ModelClass> fileData = new ArrayList<>();
 
-        if (updatedContent.isEmpty()) {
-            massageLabel.setText("Text area is empty. Nothing to save!");
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Reporter1.bin"))) {
+            while (true) {
+                try {
+                    Reporter1ModelClass user = (Reporter1ModelClass) ois.readObject();
+                    fileData.add(user);
+                } catch (EOFException e) {
+                    break;
+                }
+            }
+        } catch (FileNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            massageLabel.setText("Error reading existing data.");
             return;
         }
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(reporterFilePath, true))) {
-            writer.write(updatedContent);
-            writer.newLine();
-            massageLabel.setText("Changes saved successfully!");
-            textArea.clear();
-        } catch (IOException e) {
-            e.printStackTrace();
-            massageLabel.setText("Error saving changes!");
+        for (Reporter1ModelClass newItem : currentItems) {
+            fileData.removeIf(existingItem -> existingItem.getId().equals(newItem.getId()));
+            fileData.add(newItem);
         }
-    }
 
-    @FXML
-    public void onConfirm(ActionEvent actionEvent) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(reporterFilePath));
-             BufferedWriter writer = new BufferedWriter(new FileWriter(editorFilePath))) {
-
-            String line;
-            while ((line = reader.readLine()) != null) {
-                writer.write(line);
-                writer.newLine();
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Reporter1.bin"))) {
+            for (Reporter1ModelClass updatedItem : fileData) {
+                oos.writeObject(updatedItem);
             }
-
-            massageLabel.setText("Updated data from Reporter1.txt saved to Editor1.txt!");
+            massageLabel.setText("Data saved successfully with updates.");
         } catch (IOException e) {
             e.printStackTrace();
-            massageLabel.setText("Error saving updated data to Editor1.txt!");
+            massageLabel.setText("Could not save Data.");
         }
     }
+
 
     @FXML
     public void onEditArticle(ActionEvent actionEvent) {
@@ -111,22 +113,27 @@ public class Editor1 {
     }
 
     @FXML
-    public void onLoad(ActionEvent actionEvent) {
-        table.getItems().clear();
+    public void onLoad(ActionEvent actionEvent) throws IOException {
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream(reporterFilePath));
 
-        try (BufferedReader br = new BufferedReader(new FileReader(reporterFilePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
-                if (data.length == 4) {
-                    Reporter1ModelClass user = new Reporter1ModelClass(data[0], data[1], LocalDate.parse(data[2]), data[3]);
-                    table.getItems().add(user);
+            while (true) {
+                Reporter1ModelClass u = (Reporter1ModelClass) ois.readObject();
+                table.getItems().add(u);
+                if (ois.available() == 0) {
+                    break;
                 }
             }
-            massageLabel.setText("Data loaded successfully!");
+        } catch (EOFException e) {
+            massageLabel.setText("Successfully loaded objects from file!");
+        } catch (ClassNotFoundException e) {
+            massageLabel.setText("Bad file format!");
         } catch (IOException e) {
-            e.printStackTrace();
-            massageLabel.setText("Error loading data!");
+            massageLabel.setText("Could not load from object file!");
+        } finally {
+            if (ois != null)
+                ois.close();
         }
     }
 }
