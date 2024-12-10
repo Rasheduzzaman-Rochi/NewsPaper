@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor4">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor4">
    <children>
       <Label layoutX="26.0" layoutY="11.0" text="EDITOR (Print)">
          <font>
@@ -22,32 +22,42 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="181.0" layoutY="425.0" prefHeight="23.0" prefWidth="321.0" text="Label">
+      <Label fx:id="masssageLabel" alignment="CENTER" layoutX="181.0" layoutY="425.0" prefHeight="23.0" prefWidth="321.0" text="Label">
          <effect>
             <Glow />
          </effect>
       </Label>
-      <TableView layoutX="11.0" layoutY="72.0" prefHeight="240.0" prefWidth="457.0">
-         <columns>
-            <TableColumn prefWidth="75.66666412353516" text="Article ID" />
-            <TableColumn prefWidth="188.33333587646484" text="Title" />
-            <TableColumn prefWidth="116.0" text="Submission Date" />
-            <TableColumn minWidth="7.666656494140625" text="Status" />
-         </columns>
-      </TableView>
-      <TextArea layoutX="476.0" layoutY="74.0" prefHeight="239.0" prefWidth="199.0" />
-      <TextField alignment="CENTER" layoutX="30.0" layoutY="336.0" prefHeight="25.0" prefWidth="260.0" promptText="Notify Journalist" />
-      <Button layoutX="308.0" layoutY="335.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="52.0" text="Sent">
+      <TextArea fx:id="textArea" layoutX="476.0" layoutY="74.0" prefHeight="239.0" prefWidth="199.0" />
+      <TextField fx:id="notifyBox" alignment="CENTER" layoutX="30.0" layoutY="336.0" prefHeight="25.0" prefWidth="260.0" promptText="Notify Reporter" />
+      <Button layoutX="308.0" layoutY="335.0" mnemonicParsing="false" onAction="#onSent" prefHeight="6.0" prefWidth="52.0" text="Sent">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="627.0" layoutY="320.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="45.0" text="Save">
+      <Button layoutX="627.0" layoutY="320.0" mnemonicParsing="false" onAction="#onSave" prefHeight="24.0" prefWidth="45.0" text="Save">
          <font>
             <Font size="11.0" />
          </font>
       </Button>
-      <Button layoutX="467.0" layoutY="375.0" mnemonicParsing="false" text="Confirm Approval">
+      <Button layoutX="467.0" layoutY="375.0" mnemonicParsing="false" onAction="#onConfirm" text="Confirm Approval">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <TableView fx:id="table" layoutX="14.0" layoutY="72.0" prefHeight="240.0" prefWidth="457.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="75.66666412353516" text="Article ID" />
+            <TableColumn fx:id="titleColumn" prefWidth="114.33332824707031" text="Title" />
+            <TableColumn fx:id="dateColumn" prefWidth="119.33334350585938" text="Submission Date" />
+            <TableColumn fx:id="articleColumn" prefWidth="145.66665649414062" text="Article" />
+         </columns>
+      </TableView>
+      <Button layoutX="395.0" layoutY="333.0" mnemonicParsing="false" onAction="#onEdit" prefHeight="6.0" prefWidth="52.0" text="Edit">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="460.0" layoutY="334.0" mnemonicParsing="false" onAction="#onLoad" prefHeight="6.0" prefWidth="52.0" text="Load">
          <font>
             <Font size="13.0" />
          </font>
