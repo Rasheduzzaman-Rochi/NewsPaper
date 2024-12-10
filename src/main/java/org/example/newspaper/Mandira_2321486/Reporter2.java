@@ -9,7 +9,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -40,6 +42,8 @@ public class Reporter2 {
 
     private ArrayList<Reporter2ModelClass> userList = new ArrayList<>();
     private ArrayList<Reporter2ModelClass> filtercategory = new ArrayList<>();
+    @javafx.fxml.FXML
+    private Label massageLabel;
 
     @javafx.fxml.FXML
     public void initialize(){
@@ -55,6 +59,24 @@ public class Reporter2 {
 
     @javafx.fxml.FXML
     public void submitButton(ActionEvent actionEvent) {
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(new FileOutputStream("Reporter1.bin"));
+            for (Reporter2ModelClass u: table.getItems())
+                oos.writeObject(u);
+
+        }
+        catch (IOException e) {
+            massageLabel.setText("Could not save as objects.");
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (oos != null) oos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @javafx.fxml.FXML

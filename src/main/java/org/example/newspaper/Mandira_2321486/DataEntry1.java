@@ -5,10 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,13 +16,24 @@ public class DataEntry1 {
     @javafx.fxml.FXML
     private TableColumn titleCol;
     @javafx.fxml.FXML
-    private TableView articleTable;
-    @javafx.fxml.FXML
     private TableColumn dateCol;
     @javafx.fxml.FXML
     private TextArea contentTextArea;
     @javafx.fxml.FXML
-    private TableColumn timeCol;
+    private TextField idTextField;
+    @javafx.fxml.FXML
+    private TableColumn idCol;
+    @javafx.fxml.FXML
+    private Label massageLabel;
+    @javafx.fxml.FXML
+    private DatePicker submissionDatePicker;
+    @javafx.fxml.FXML
+    private TableView table;
+
+    @javafx.fxml.FXML
+    private void initialize(){
+
+    }
 
     @javafx.fxml.FXML
     public void saveArticleButton(ActionEvent actionEvent) {
@@ -48,7 +56,5 @@ public class DataEntry1 {
     public void saveButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
-    public void addNewArticleButton(ActionEvent actionEvent) {
-    }
+    
 }

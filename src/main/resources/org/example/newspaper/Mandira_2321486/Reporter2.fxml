@@ -25,7 +25,7 @@
       <TextField fx:id="titleTextField" layoutX="442.0" layoutY="97.0" prefHeight="35.0" prefWidth="189.0" promptText="Title" />
       <ComboBox fx:id="categoryComboBox" layoutX="442.0" layoutY="141.0" prefHeight="27.0" prefWidth="189.0" promptText="Category" />
       <Button layoutX="569.0" layoutY="429.0" mnemonicParsing="false" onAction="#submitButton" prefHeight="27.0" prefWidth="62.0" text="Submit" />
-      <TextArea fx:id="contentTextArea" layoutX="14.0" layoutY="354.0" prefHeight="103.0" prefWidth="414.0" promptText="Content" />
+      <TextArea fx:id="contentTextArea" layoutX="180.0" layoutY="322.0" prefHeight="103.0" prefWidth="247.0" promptText="Content" />
       <Button layoutX="589.0" layoutY="322.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
       <TableView fx:id="table" layoutX="14.0" layoutY="62.0" prefHeight="245.0" prefWidth="414.0">
         <columns>
@@ -38,6 +38,7 @@
       <TextField fx:id="subTitleTextField" layoutX="442.0" layoutY="179.0" prefHeight="125.0" prefWidth="189.0" promptText="SubTitle" />
       <TextField fx:id="articleIDTextField" layoutX="442.0" layoutY="62.0" prefHeight="25.0" prefWidth="189.0" promptText="Article ID" />
       <ComboBox fx:id="filterCategoryComboBox" layoutX="14.0" layoutY="322.0" onAction="#filterByCategory" prefWidth="150.0" promptText="Filter By Category" />
-      <Button layoutX="182.0" layoutY="322.0" mnemonicParsing="false" onAction="#showButton" text="Show" />
+      <Button layoutX="118.0" layoutY="361.0" mnemonicParsing="false" onAction="#showButton" text="Show" />
+      <Label fx:id="massageLabel" layoutX="141.0" layoutY="430.0" prefHeight="25.0" prefWidth="326.0" />
    </children>
 </AnchorPane>
