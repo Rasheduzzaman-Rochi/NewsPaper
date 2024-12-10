@@ -84,6 +84,7 @@ public class Reporter1 {
         catch (IOException e) {
             massageLabel.setText("Could not save as objects.");
             e.printStackTrace();
+
         }
         finally {
             try {
