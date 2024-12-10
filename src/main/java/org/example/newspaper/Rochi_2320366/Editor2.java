@@ -1,18 +1,20 @@
 package org.example.newspaper.Rochi_2320366;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import org.example.newspaper.Mandira_2321486.Reporter1ModelClass;
 import org.example.newspaper.Mandira_2321486.Reporter2ModelClass;
 
 import java.io.*;
-import java.time.LocalDate;
 
 public class Editor2 {
     @javafx.fxml.FXML
@@ -30,7 +32,7 @@ public class Editor2 {
     @javafx.fxml.FXML
     private TableColumn<Reporter2ModelClass,String> idColumn;
 
-    private final String reporterFilePath = "";
+    private final String reporterFilePath = "Reporter2.bin";
 
     @javafx.fxml.FXML
     public void initialize(){
@@ -72,42 +74,42 @@ public class Editor2 {
     }
 
     @javafx.fxml.FXML
-    public void onSave(ActionEvent actionEvent) {
-        String updatedContent = textArea.getText().trim();
+    public void onSave(ActionEvent actionEvent) throws IOException{
+        ObservableList<Reporter2ModelClass> currentItems = table.getItems();
 
-        if (updatedContent.isEmpty()) {
-            massageLabel.setText("Text area is empty. Nothing to save!");
-            return;
-        }
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(reporterFilePath, true))) {
-            writer.write(updatedContent);
-            writer.newLine();
-            massageLabel.setText("Changes saved successfully!");
-            textArea.clear();
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Reporter2.bin"))) {
+            for (Reporter2ModelClass item : currentItems) {
+                oos.writeObject(item);
+            }
+            massageLabel.setText("Data saved successfully with updates.");
         } catch (IOException e) {
             e.printStackTrace();
-            massageLabel.setText("Error saving changes!");
+            massageLabel.setText("Could not save Data.");
         }
     }
 
     @javafx.fxml.FXML
-    public void onLoad(ActionEvent actionEvent) {
-        table.getItems().clear();
+    public void onLoad(ActionEvent actionEvent) throws IOException{
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream(reporterFilePath));
 
-        try (BufferedReader br = new BufferedReader(new FileReader(reporterFilePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
-                if (data.length == 4) {
-                    Reporter2ModelClass user = new Reporter2ModelClass(data[0], data[1], data[2], data[3]);
-                    table.getItems().add(user);
+            while (true) {
+                Reporter2ModelClass u = (Reporter2ModelClass) ois.readObject();
+                table.getItems().add(u);
+                if (ois.available() == 0) {
+                    break;
                 }
             }
-            massageLabel.setText("Data loaded successfully!");
+        } catch (EOFException e) {
+            massageLabel.setText("Successfully loaded objects from file!");
+        } catch (ClassNotFoundException e) {
+            massageLabel.setText("Bad file format!");
         } catch (IOException e) {
-            e.printStackTrace();
-            massageLabel.setText("Error loading data!");
+            massageLabel.setText("Could not load from object file!");
+        } finally {
+            if (ois != null)
+                ois.close();
         }
     }
 }
