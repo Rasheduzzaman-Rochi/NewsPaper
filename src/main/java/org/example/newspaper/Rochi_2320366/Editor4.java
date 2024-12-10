@@ -17,15 +17,15 @@ import java.time.LocalDate;
 
 public class Editor4 {
     @javafx.fxml.FXML
-    private TableColumn titleColumn;
+    private TableColumn<Reporter1ModelClass,String> titleColumn;
     @javafx.fxml.FXML
-    private TableColumn dateColumn;
+    private TableColumn<Reporter1ModelClass, LocalDate> dateColumn;
     @javafx.fxml.FXML
-    private TableColumn articleColumn;
+    private TableColumn<Reporter1ModelClass,String> articleColumn;
     @javafx.fxml.FXML
-    private TableView table;
+    private TableView<Reporter1ModelClass> table;
     @javafx.fxml.FXML
-    private TableColumn idColumn;
+    private TableColumn<Reporter1ModelClass,String> idColumn;
     @javafx.fxml.FXML
     private TextField notifyBox;
     @javafx.fxml.FXML
