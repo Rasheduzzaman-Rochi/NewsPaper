@@ -61,7 +61,7 @@ public class Reporter2 {
     public void submitButton(ActionEvent actionEvent) {
         ObjectOutputStream oos = null;
         try {
-            oos = new ObjectOutputStream(new FileOutputStream("Reporter1.bin"));
+            oos = new ObjectOutputStream(new FileOutputStream("Reporter2.bin"));
             for (Reporter2ModelClass u: table.getItems())
                 oos.writeObject(u);
 

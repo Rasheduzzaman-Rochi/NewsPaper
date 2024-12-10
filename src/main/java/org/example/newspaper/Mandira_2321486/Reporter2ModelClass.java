@@ -1,6 +1,8 @@
 package org.example.newspaper.Mandira_2321486;
 
-public class Reporter2ModelClass {
+import java.io.Serializable;
+
+public class Reporter2ModelClass implements Serializable {
     private String id;
     private String title;
     private String subtitle;
