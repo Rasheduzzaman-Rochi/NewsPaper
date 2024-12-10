@@ -1,8 +1,9 @@
 package org.example.newspaper.Mushfiq_2321450;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class CustomerEngagementManager1ModelClass {
+public class CustomerEngagementManager1ModelClass implements Serializable {
    private String name;
    private String description;
    private LocalDate date;

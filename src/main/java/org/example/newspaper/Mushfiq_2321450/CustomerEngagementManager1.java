@@ -12,7 +12,9 @@ import javafx.stage.Stage;
 
 
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -47,7 +49,7 @@ public class CustomerEngagementManager1 {
     @FXML
     private TableColumn<CustomerEngagementManager1ModelClass, String> descriptionCol;
     @FXML
-    private TableColumn<CustomerEngagementManager1ModelClass, LocalDate>dateCol;
+    private TableColumn<CustomerEngagementManager1ModelClass, LocalDate> dateCol;
     @FXML
     private TableColumn<CustomerEngagementManager1ModelClass, String> nameCol;
 
@@ -56,7 +58,7 @@ public class CustomerEngagementManager1 {
     private Label onAddLabel;
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         comboBox.getItems().addAll("Select audience", "General", "Sports", "Business", "Technology");
 
 
@@ -64,7 +66,6 @@ public class CustomerEngagementManager1 {
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         audienceCol.setCellValueFactory(new PropertyValueFactory<>("audience"));
-
 
 
     }
@@ -84,8 +85,26 @@ public class CustomerEngagementManager1 {
     }
 
     @FXML
-    void OnLaunchButtonClick(ActionEvent actionEvent) {
+    void OnLaunchButtonClick(ActionEvent actionEvent) throws IOException {
 
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(new FileOutputStream("CustomerEngagementManager1.bin"));
+            for (CustomerEngagementManager1ModelClass u : tableView.getItems())
+                oos.writeObject(u);
+
+        } catch (IOException e) {
+            onAddLabel.setText("Could not save as objects.");
+            e.printStackTrace();
+        } finally {
+            try {
+                if (oos != null) oos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        }
 
     }
 
@@ -96,15 +115,11 @@ public class CustomerEngagementManager1 {
         LocalDate date = datePicker.getValue();
         String audience = comboBox.getValue();
 
-        if (name.isBlank() || description == null || date == null  || audience == null) {
+        if (name.isBlank() || description == null || date == null || audience == null) {
             onAddLabel.setText("Enter valid inputs.");
             return;
-
-
-        }
-        else {
+        } else {
             onAddLabel.setText("");
-
         }
 
         nameTF.clear();
@@ -115,10 +130,10 @@ public class CustomerEngagementManager1 {
         CustomerEngagementManager1ModelClass u = new CustomerEngagementManager1ModelClass(name, description, date, audience);
         tableView.getItems().add(u);
         userList.add(u);
-
-
-
-            }
-
+    }
 
 }
+
+
+
+
