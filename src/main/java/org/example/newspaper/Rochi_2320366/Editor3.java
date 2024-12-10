@@ -72,7 +72,7 @@ public class Editor3 {
             return;
         }
 
-        Reporter1ModelClass selectedArticle = (Reporter1ModelClass) table.getItems().get(selectedIndex);
+        Reporter1ModelClass selectedArticle = table.getItems().get(selectedIndex);
         String id = selectedArticle.getId();
         String title = selectedArticle.getTitle();
         LocalDate date = selectedArticle.getDate();
@@ -80,7 +80,6 @@ public class Editor3 {
 
         String line = id + ", " + title + ", " + date + ", " + article;
         textArea.setText(line);
-
     }
 
     @javafx.fxml.FXML
@@ -118,6 +117,24 @@ public class Editor3 {
         } finally {
             if (ois != null)
                 ois.close();
+        }
+    }
+
+    @FXML
+    public void onSent(ActionEvent actionEvent) {
+        String comment = massageLabel.getText();
+
+        if (comment.isEmpty()) {
+            massageLabel.setText("Please enter a comment!");
+            return;
+        }
+
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Editor4.bin", true))) {
+            oos.writeUTF(comment);
+            massageLabel.setText("Comment added successfully!");
+        } catch (IOException e) {
+            e.printStackTrace();
+            massageLabel.setText("Could not add comment!");
         }
     }
 }
