@@ -5,40 +5,63 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class DataEntry2 {
     @javafx.fxml.FXML
-    private TableColumn titleCol;
+    private TableColumn<DataEntry2ModelClass,String> titleCol;
     @javafx.fxml.FXML
-    private ComboBox filterStatusComboBox;
+    private TableColumn<DataEntry2ModelClass,LocalDate> dateCol;
     @javafx.fxml.FXML
-    private TableColumn dateCol;
+    private TableView<DataEntry2ModelClass> articlesTable;
     @javafx.fxml.FXML
-    private TableColumn statusCol;
+    private TableColumn<DataEntry2ModelClass,String> categoryCol;
     @javafx.fxml.FXML
-    private TableView articlesTable;
+    private ComboBox<String> filterCategoryComboBox;
     @javafx.fxml.FXML
-    private DatePicker filterDatePicker;
+    private TextField titleTextField;
     @javafx.fxml.FXML
-    private ComboBox foldersComboBox;
+    private TextArea showArticle;
     @javafx.fxml.FXML
-    private TableColumn categoryCol;
+    private Label massageLabel;
     @javafx.fxml.FXML
-    private ComboBox filterCategoryComboBox;
+    private ComboBox<String> categoryComboBox;
+    @javafx.fxml.FXML
+    private DatePicker datePicker;
+
+    private ArrayList<DataEntry2ModelClass> userList = new ArrayList<>();
+    private ArrayList<DataEntry2ModelClass> filtercategory = new ArrayList<>();
 
     @javafx.fxml.FXML
-    public void applyFilterButton(ActionEvent actionEvent) {
+    public void initialize(){
+        categoryComboBox.getItems().addAll("Sports","Politics","Economy","Education" ,"Lifestyle","Crime","Technology");
+        filterCategoryComboBox.getItems().addAll("Sports","Politics","Economy","Education" ,"Lifestyle","Crime","Technology");
+
+        //Table
+        titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
+        categoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
     }
+
+
 
     @javafx.fxml.FXML
     public void organizeArticleButton(ActionEvent actionEvent) {
+        String title = titleTextField.getText();
+        LocalDate date = datePicker.getValue();
+        String category = categoryComboBox.getValue();
+
+
+        DataEntry2ModelClass u = new DataEntry2ModelClass(title, date,category);
+        articlesTable.getItems().addAll(u);
+        userList.add(u);
+
     }
 
     @javafx.fxml.FXML
@@ -55,6 +78,33 @@ public class DataEntry2 {
     }
 
     @javafx.fxml.FXML
-    public void fileArticleButton(ActionEvent actionEvent) {
+    public void showButton(ActionEvent actionEvent) {
+        String title = titleTextField.getText();
+        LocalDate date =datePicker.getValue();
+        String category = categoryComboBox.getValue();
+        String line = title  + " , " +date +" , "+ category;
+        showArticle.appendText(line);
+    }
+
+    @javafx.fxml.FXML
+    public void saveButton(ActionEvent actionEvent) {
+        massageLabel.setText("Data saved successfully");
+    }
+
+    @javafx.fxml.FXML
+    public void filterByCategory(ActionEvent actionEvent) {
+        String filterByCategory = filterCategoryComboBox.getValue();
+        filtercategory.clear();
+        for (DataEntry2ModelClass c :userList ) {
+            if (c.getCategory().equals(filterByCategory)) {
+                filtercategory.add(c);
+
+            }
+        }
+        System.out.println(articlesTable.toString());
+        System.out.println(filtercategory.toString());
+
+        articlesTable.getItems().clear();
+        articlesTable.getItems().addAll(filtercategory);
     }
 }
