@@ -33,13 +33,12 @@ public class Reporter1 {
     private DatePicker submissionDatePicker;
     @javafx.fxml.FXML
     private Label massageLabel;
-
-    private ArrayList<Reporter1ModelClass> userList = new ArrayList<>();
-
     @javafx.fxml.FXML
     private TableColumn articleCol;
     @javafx.fxml.FXML
     private TextField articleTextField;
+
+    private ArrayList<Reporter1ModelClass> userList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {

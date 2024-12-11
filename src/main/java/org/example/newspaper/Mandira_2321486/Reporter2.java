@@ -49,8 +49,6 @@ public class Reporter2 {
     public void initialize(){
         categoryComboBox.getItems().addAll("Sports","Politics","Economy","Education" ,"Lifestyle","Crime","Technology");
         filterCategoryComboBox.getItems().addAll("Sports","Politics","Economy","Education" ,"Lifestyle","Crime","Technology");
-
-        //Table
         articleIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
         subTitleCol.setCellValueFactory(new PropertyValueFactory<>("subtitle"));
