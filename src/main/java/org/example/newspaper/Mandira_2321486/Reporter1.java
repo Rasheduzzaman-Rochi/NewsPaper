@@ -105,4 +105,5 @@ public class Reporter1 {
         table.getItems().addAll(u);
         userList.add(u);
     }
+
 }
