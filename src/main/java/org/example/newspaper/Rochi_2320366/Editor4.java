@@ -91,7 +91,7 @@ public class Editor4 {
             return;
         }
 
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Editor4.bin", true))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Editor4Comment.bin", true))) {
             oos.writeUTF(comment);
             masssageLabel.setText("Comment added successfully!");
         } catch (IOException e) {
