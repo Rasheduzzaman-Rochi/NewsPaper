@@ -21,27 +21,27 @@ public class Editor5 {
     @javafx.fxml.FXML
     private TextField IdBox;
     @javafx.fxml.FXML
-    private ComboBox categoryBox;
+    private ComboBox<String> categoryBox;
     @javafx.fxml.FXML
-    private TableColumn categoryColumn;
+    private TableColumn<Editor5ModelClass,String> categoryColumn;
     @javafx.fxml.FXML
-    private ComboBox priorityComboBox;
+    private ComboBox<String> priorityComboBox;
     @javafx.fxml.FXML
-    private TableColumn priorityColumn;
+    private TableColumn<Editor5ModelClass,String> priorityColumn;
     @javafx.fxml.FXML
-    private TableColumn titleColumn;
+    private TableColumn<Editor5ModelClass,String> titleColumn;
     @javafx.fxml.FXML
-    private TableColumn articleIDColumn;
+    private TableColumn<Editor5ModelClass,String> articleIDColumn;
     @javafx.fxml.FXML
     private Label massageLabel;
     @javafx.fxml.FXML
     private TextField titleBox;
     @javafx.fxml.FXML
-    private TableColumn dateColumn;
+    private TableColumn<Editor5ModelClass,LocalDate> dateColumn;
     @javafx.fxml.FXML
     private DatePicker dateBox;
     @javafx.fxml.FXML
-    private TableView table;
+    private TableView<Editor5ModelClass> table;
     @javafx.fxml.FXML
     private TextArea textArea;
 
@@ -120,8 +120,8 @@ public class Editor5 {
         String title = titleBox.getText();
         LocalDate date = dateBox.getValue();
         String id = IdBox.getText();
-        String category = (String) categoryBox.getValue();
-        String priority = (String) priorityComboBox.getValue();
+        String category = categoryBox.getValue();
+        String priority = priorityComboBox.getValue();
 
         Editor5ModelClass u = new Editor5ModelClass(id, title, category, date, priority);
         table.getItems().addAll(u);
