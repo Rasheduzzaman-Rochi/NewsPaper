@@ -129,7 +129,7 @@ public class Editor3 {
             return;
         }
 
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Editor4.bin", true))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Editor5.bin", true))) {
             oos.writeUTF(comment);
             massageLabel.setText("Comment added successfully!");
         } catch (IOException e) {
