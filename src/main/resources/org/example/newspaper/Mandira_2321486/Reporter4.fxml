@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.Reporter4">
+<AnchorPane prefHeight="472.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mandira_2321486.Reporter4">
    <children>
       <Label layoutX="21.0" layoutY="14.0" text="Reporter (Print)">
          <font>
@@ -20,19 +23,23 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="29.0" layoutY="68.0" mnemonicParsing="false" onAction="#visualMaterialsButton" prefHeight="27.0" prefWidth="141.0" text="Upload Visual Materials" />
-      <TableView fx:id="visualTable" layoutX="29.0" layoutY="113.0" prefHeight="201.0" prefWidth="399.0">
+      <Button layoutX="25.0" layoutY="344.0" mnemonicParsing="false" onAction="#visualMaterialsButton" prefHeight="27.0" prefWidth="141.0" text="Upload Visual Materials" />
+      <Button layoutX="554.0" layoutY="340.0" mnemonicParsing="false" onAction="#attachImageButton" prefHeight="27.0" prefWidth="89.0" text="Attach image" />
+      <Button layoutX="523.0" layoutY="416.0" mnemonicParsing="false" onAction="#notifyDesignTeamButton" prefHeight="35.0" prefWidth="124.0" text=" Notify Design Team" />
+      <Label fx:id="massageLabel" layoutX="29.0" layoutY="409.0" prefHeight="49.0" prefWidth="457.0" text="Label" />
+      <ImageView fx:id="image" fitHeight="122.0" fitWidth="200.0" layoutX="444.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" />
+      <TableView fx:id="table" layoutX="21.0" layoutY="113.0" prefHeight="215.0" prefWidth="411.0">
         <columns>
-          <TableColumn fx:id="titleCol" prefWidth="75.0" text="Title" />
-          <TableColumn fx:id="authorCol" prefWidth="90.6666488647461" text="Author" />
-            <TableColumn fx:id="dateCol" prefWidth="81.33332824707031" text="Date" />
-            <TableColumn fx:id="statusCol" prefWidth="151.3332977294922" text="Attachment Status" />
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="Article ID" />
+          <TableColumn fx:id="titleCol" prefWidth="91.3333511352539" text="Title" />
+            <TableColumn fx:id="dateCol" prefWidth="99.33332824707031" text="Date" />
+            <TableColumn fx:id="articleCol" prefWidth="144.6666259765625" text="Article" />
         </columns>
       </TableView>
-      <ListView fx:id="fileList" layoutX="445.0" layoutY="113.0" prefHeight="201.0" prefWidth="200.0" />
-      <Button layoutX="561.0" layoutY="331.0" mnemonicParsing="false" onAction="#attachFileButton" prefHeight="27.0" prefWidth="83.0" text="Attach File" />
-      <Button layoutX="263.0" layoutY="364.0" mnemonicParsing="false" onAction="#notifyDesignTeamButton" prefHeight="35.0" prefWidth="124.0" text=" Notify Design Team" />
-      <Label layoutX="29.0" layoutY="409.0" prefHeight="49.0" prefWidth="457.0" />
-      <Button layoutX="495.0" layoutY="421.0" mnemonicParsing="false" onAction="#confirmButton" text="Confirm" />
+      <TextField fx:id="articleIDTextField" layoutX="21.0" layoutY="72.0" promptText="articleIDTextField" />
+      <TextField fx:id="titleTextField" layoutX="183.0" layoutY="72.0" promptText="titleTextField" />
+      <TextField fx:id="articleTextField" layoutX="510.0" layoutY="72.0" promptText="articleTextField" />
+      <DatePicker fx:id="datePicker" layoutX="347.0" layoutY="72.0" prefHeight="25.0" prefWidth="149.0" promptText="Date" />
+      <TextArea fx:id="showTextArea" layoutX="444.0" layoutY="242.0" prefHeight="85.0" prefWidth="200.0" promptText="show Data" />
    </children>
 </AnchorPane>
