@@ -9,11 +9,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import org.example.newspaper.Mandira_2321486.Reporter2ModelClass;
+
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class CustomerEngagementManager3 {
@@ -36,6 +37,8 @@ public class CustomerEngagementManager3 {
     private TableColumn<CustomerEngagementManager3ModelClass, String> descriptionCol;
 
     private ArrayList<CustomerEngagementManager3ModelClass> userList = new ArrayList<>();
+    @FXML
+    private TextArea informationTA;
 
     @FXML
     public void initialize() {
@@ -107,5 +110,14 @@ public class CustomerEngagementManager3 {
         tableView.getItems().add(u);
         userList.add(u);
 
+    }
+
+    @FXML
+    public void OnAddInformationButtonClick(ActionEvent actionEvent) {
+
+        String title = titleTF.getText();
+        String description = descriptionTextArea.getText();
+        String line = title + " , " + description;
+        informationTA.appendText(line);
     }
 }
