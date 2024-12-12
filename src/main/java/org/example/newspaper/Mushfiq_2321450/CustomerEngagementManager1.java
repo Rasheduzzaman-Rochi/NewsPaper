@@ -59,8 +59,8 @@ public class CustomerEngagementManager1 {
 
     @FXML
     public void initialize() {
-        comboBox.getItems().addAll("Select audience", "General", "Sports", "Business", "Technology");
-
+        comboBox.getItems().addAll("General", "Sports", "Business", "Technology");
+        comboBox.setValue("Select");
 
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
