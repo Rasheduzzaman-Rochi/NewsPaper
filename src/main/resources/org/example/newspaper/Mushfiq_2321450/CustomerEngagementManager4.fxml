@@ -18,14 +18,23 @@
       </Label>
       <TableView fx:id="tableView" layoutX="285.0" layoutY="90.0" prefHeight="200.0" prefWidth="386.0">
         <columns>
-          <TableColumn fx:id="titleCol" prefWidth="156.800048828125" text="Subscription Title" />
-          <TableColumn fx:id="detailsCol" prefWidth="228.79995727539062" text="Subscription Details" />
+          <TableColumn fx:id="titleCol" prefWidth="124.5999755859375" text=" Title" />
+          <TableColumn fx:id="descriptionCol" prefWidth="261.800048828125" text=" Description" />
         </columns>
       </TableView>
       <TextField fx:id="titleTF" layoutX="28.0" layoutY="90.0" promptText="New Subscription title" />
       <TextArea fx:id="descriptionTA" layoutX="28.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" promptText="New Subscription Description" />
       <Button layoutX="178.0" layoutY="355.0" mnemonicParsing="false" onAction="#OnEditButtonClick" prefHeight="26.0" prefWidth="51.0" text="Edit" />
       <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#OnBackButtonClick" text="Back" />
-      <Button layoutX="452.0" layoutY="312.0" mnemonicParsing="false" onAction="#OnSaveButtonClick" prefHeight="26.0" prefWidth="58.0" text="Save" />
+      <Button layoutX="602.0" layoutY="402.0" mnemonicParsing="false" onAction="#OnSaveButtonClick" prefHeight="26.0" prefWidth="58.0" text="Save">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="285.0" layoutY="305.0" mnemonicParsing="false" onAction="#OnLoadButtonClick" prefHeight="26.0" prefWidth="90.0" text="Load" />
+      <Label fx:id="label2" layoutX="342.0" layoutY="358.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

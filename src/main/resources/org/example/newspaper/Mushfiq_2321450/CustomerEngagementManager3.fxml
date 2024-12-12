@@ -19,7 +19,7 @@
       <TextField fx:id="titleTF" layoutX="27.0" layoutY="88.0" promptText="Subscription Title" />
       <TextArea fx:id="descriptionTextArea" layoutX="27.0" layoutY="144.0" prefHeight="200.0" prefWidth="287.0" promptText="Description" />
       <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#OnBackButtonClick" text="Back" />
-      <Button layoutX="292.0" layoutY="369.0" mnemonicParsing="false" onAction="#OnUpdateButtonClick" text="Update">
+      <Button layoutX="601.0" layoutY="359.0" mnemonicParsing="false" onAction="#OnUpdateButtonClick" text="Update">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -35,5 +35,10 @@
           <TableColumn fx:id="descriptionCol" prefWidth="229.60000610351562" text="Description" />
         </columns>
       </TableView>
+      <Button layoutX="27.0" layoutY="363.0" mnemonicParsing="false" onAction="#OnSaveButtonClick" prefHeight="26.0" prefWidth="54.0" text="Save">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
