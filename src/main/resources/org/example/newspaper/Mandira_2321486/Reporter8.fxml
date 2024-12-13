@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -21,28 +23,25 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <ComboBox fx:id="reporterComboBox" layoutX="444.0" layoutY="86.0" prefHeight="25.0" prefWidth="179.0" promptText="Assign Reporter" />
-      <TableView fx:id="eventTable" layoutX="14.0" layoutY="124.0" prefHeight="239.0" prefWidth="366.0">
+      <ComboBox fx:id="reporterComboBox" layoutX="14.0" layoutY="352.0" prefHeight="25.0" prefWidth="179.0" promptText="Assign Reporter" />
+      <TableView fx:id="table" layoutX="14.0" layoutY="108.0" prefHeight="235.0" prefWidth="435.0">
         <columns>
           <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
           <TableColumn fx:id="dateCol" prefWidth="82.6666488647461" text="Date" />
             <TableColumn fx:id="timeCol" prefWidth="88.00001525878906" text="Time" />
-            <TableColumn fx:id="locationCol" prefWidth="119.33331298828125" text="Location" />
+            <TableColumn fx:id="locationCol" prefWidth="93.33331298828125" text="Location" />
+            <TableColumn fx:id="reportersCol" prefWidth="101.33331298828125" text="Reporters" />
         </columns>
       </TableView>
-      <Button layoutX="14.0" layoutY="86.0" mnemonicParsing="false" onAction="#newEventButton" prefHeight="25.0" prefWidth="109.0" text="New Event" />
-      <Button layoutX="305.0" layoutY="378.0" mnemonicParsing="false" onAction="#saveEventButton" text="Save Event" />
-      <DatePicker fx:id="eventDatePicker" layoutX="205.0" layoutY="86.0" promptText="Event Date" />
-      <ComboBox fx:id="filterDateComboBox" layoutX="444.0" layoutY="118.0" prefHeight="25.0" prefWidth="179.0" promptText="Filter Date" />
-      <ComboBox fx:id="filterLocationComboBox" layoutX="444.0" layoutY="150.0" prefHeight="25.0" prefWidth="179.0" promptText="Filter Location" />
-      <TableView fx:id="filterTable" layoutX="444.0" layoutY="182.0" prefHeight="179.0" prefWidth="231.0">
-        <columns>
-          <TableColumn fx:id="eventNameCol" prefWidth="84.66659545898438" text="Event Name" />
-          <TableColumn fx:id="filterDateCol" prefWidth="66.00006103515625" text="Date" />
-            <TableColumn fx:id="filterLocationCol" prefWidth="79.33333333333334" text="Location" />
-        </columns>
-      </TableView>
-      <Button layoutX="444.0" layoutY="423.0" mnemonicParsing="false" onAction="#editEventButton" text="Edit Event" />
-      <Button layoutX="578.0" layoutY="423.0" mnemonicParsing="false" onAction="#deleteEventButton" text="Delete Event" />
+      <Button layoutX="377.0" layoutY="352.0" mnemonicParsing="false" onAction="#saveEventButton" text="Save Event" />
+      <DatePicker fx:id="eventDatePicker" layoutX="513.0" layoutY="73.0" prefHeight="25.0" prefWidth="149.0" promptText="Event Date" />
+      <ComboBox fx:id="filterLocationComboBox" layoutX="14.0" layoutY="388.0" onAction="#filterByLocation" prefHeight="25.0" prefWidth="179.0" promptText="Filter Location" />
+      <Button layoutX="593.0" layoutY="352.0" mnemonicParsing="false" onAction="#editEventButton" text="Edit Event" />
+      <TextField fx:id="nameTextField" layoutX="14.0" layoutY="73.0" promptText="Name" />
+      <TextField fx:id="timeTextField" layoutX="182.0" layoutY="73.0" promptText="Time" />
+      <TextArea fx:id="showTextArea" layoutX="461.0" layoutY="108.0" prefHeight="235.0" prefWidth="200.0" promptText="Show After Edit" />
+      <ComboBox fx:id="locationCombo" layoutX="350.0" layoutY="73.0" prefWidth="150.0" promptText="Location" />
+      <Button layoutX="613.0" layoutY="433.0" mnemonicParsing="false" onAction="#submitButton" text="Submit" />
+      <Label fx:id="massageLabel" layoutX="215.0" layoutY="449.0" prefHeight="17.0" prefWidth="305.0" text="Label" />
    </children>
 </AnchorPane>
