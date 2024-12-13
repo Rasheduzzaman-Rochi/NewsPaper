@@ -93,9 +93,6 @@ public class Reporter4 {
         String title = titleTextField.getText();
         String article = articleTextField.getText();
         LocalDate date = datePicker.getValue();
-        String line = id + " , " + title + " , " + date + " , " + article;
-        showTextArea.appendText(line);
-
 
         Reporter4ModelClass u = new Reporter4ModelClass(id,title, date, article);
         table.getItems().addAll(u);
@@ -104,6 +101,5 @@ public class Reporter4 {
 
     @javafx.fxml.FXML
     public void attachImageButton(ActionEvent actionEvent) {
-        
     }
 }

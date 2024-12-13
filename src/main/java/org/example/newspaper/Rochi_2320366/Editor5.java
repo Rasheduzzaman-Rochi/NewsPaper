@@ -98,8 +98,8 @@ public class Editor5 {
     }
 
     @javafx.fxml.FXML
-    public void onSent(ActionEvent actionEvent) throws IOException{
-        String comment = massageLabel.getText();
+    public void onSent(ActionEvent actionEvent){
+        String comment = textArea.getText();
 
         if (comment.isEmpty()) {
             massageLabel.setText("Please enter a comment!");
