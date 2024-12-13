@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,25 +18,30 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="595.0" layoutY="32.0" mnemonicParsing="false" onAction="#backButton" text="Back">
+      <Button layoutX="599.0" layoutY="21.0" mnemonicParsing="false" onAction="#backButton" text="Back">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="64.0" mnemonicParsing="false" onAction="#meetingSchedulerButton" text="Meeting Scheduler" />
-      <TableView fx:id="meetingTable" layoutX="14.0" layoutY="99.0" prefHeight="200.0" prefWidth="396.0">
+      <Button layoutX="299.0" layoutY="355.0" mnemonicParsing="false" onAction="#joinMeetingButton" text="Join Meeting" />
+      <TextArea fx:id="summaryTextArea" layoutX="506.0" layoutY="97.0" prefHeight="247.0" prefWidth="149.0" promptText="Meeting Summary" />
+      <Button layoutX="612.0" layoutY="355.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
+      <Button layoutX="513.0" layoutY="430.0" mnemonicParsing="false" onAction="#notifyTeamMemberButton" prefHeight="27.0" prefWidth="140.0" text="Notify Team Member" />
+      <TableView fx:id="table" layoutX="14.0" layoutY="97.0" prefHeight="247.0" prefWidth="488.0">
         <columns>
-          <TableColumn fx:id="nameCol" prefWidth="109.3333158493042" text="Topic Name" />
-          <TableColumn fx:id="timeCol" prefWidth="77.99999237060547" text="Time" />
-            <TableColumn fx:id="dateCol" prefWidth="91.99998474121094" text="Date" />
-            <TableColumn fx:id="agendaCol" prefWidth="116.0" text="Agenda" />
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="Article ID" />
+          <TableColumn fx:id="titleCol" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="subDLCol" prefWidth="134.0" text="Submission Deadline" />
+            <TableColumn fx:id="editingDLCol" prefWidth="115.33331298828125" text="Editing Deadline" />
+            <TableColumn fx:id="statusCol" prefWidth="87.33331298828125" text="Status" />
         </columns>
       </TableView>
-      <Button layoutX="325.0" layoutY="313.0" mnemonicParsing="false" onAction="#joinMeetingButton" text="Join Meeting" />
-      <TextArea fx:id="notesTextArea" layoutX="422.0" layoutY="99.0" prefHeight="200.0" prefWidth="200.0" promptText="Notes" />
-      <Button layoutX="568.0" layoutY="313.0" mnemonicParsing="false" onAction="#reviewButton" text="Review" />
-      <TextArea fx:id="summaryTextArea" layoutX="14.0" layoutY="338.0" prefHeight="115.0" prefWidth="261.0" promptText="Meeting Summary" />
-      <Button layoutX="284.0" layoutY="427.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
-      <Button layoutX="452.0" layoutY="413.0" mnemonicParsing="false" onAction="#notifyTeamMemberButton" prefHeight="27.0" prefWidth="169.0" text="Notify Absent Team Member" />
+      <TextField fx:id="idTextField" layoutX="14.0" layoutY="63.0" promptText="Article ID" />
+      <TextField fx:id="titleTextField" layoutX="177.0" layoutY="63.0" promptText="Title" />
+      <DatePicker fx:id="subDatePicker" layoutX="342.0" layoutY="63.0" prefHeight="25.0" prefWidth="149.0" promptText="Submission Deadline" />
+      <DatePicker fx:id="editingDatePicker" layoutX="14.0" layoutY="355.0" prefHeight="25.0" prefWidth="149.0" promptText="Editing Deadline" />
+      <ComboBox fx:id="statusCombo" layoutX="506.0" layoutY="63.0" prefHeight="25.0" prefWidth="149.0" promptText="Status" />
+      <Button layoutX="463.0" layoutY="355.0" mnemonicParsing="false" onAction="#loadButton" text="Load" />
+      <Label fx:id="massageLabel" layoutX="104.0" layoutY="444.0" prefHeight="17.0" prefWidth="333.0" text="Label" />
    </children>
 </AnchorPane>

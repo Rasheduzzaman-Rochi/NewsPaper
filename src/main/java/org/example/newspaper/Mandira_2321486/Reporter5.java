@@ -95,4 +95,6 @@ public class Reporter5 {
     @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
 
+    }
+
 }
