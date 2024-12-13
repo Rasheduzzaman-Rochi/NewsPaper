@@ -2,32 +2,33 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor8">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.Editor8">
    <children>
       <Label layoutX="26.0" layoutY="11.0" text="EDITOR (Print)">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="62.0" prefHeight="240.0" prefWidth="457.0">
+      <TableView fx:id="table" layoutX="14.0" layoutY="62.0" prefHeight="240.0" prefWidth="457.0">
          <columns>
-            <TableColumn prefWidth="75.66666412353516" text="Article ID" />
-            <TableColumn prefWidth="188.33333587646484" text="Title" />
-            <TableColumn prefWidth="95.33331298828125" text="Current Status" />
-            <TableColumn minWidth="7.666656494140625" prefWidth="100.66668701171875" text="Last Updated" />
+            <TableColumn fx:id="idColumn" prefWidth="75.66666412353516" text="Article ID" />
+            <TableColumn fx:id="titleColumn" prefWidth="188.33333587646484" text="Title" />
+            <TableColumn fx:id="statusColumn" prefWidth="95.33331298828125" text="Current Status" />
+            <TableColumn fx:id="updateColumn" minWidth="7.666656494140625" prefWidth="100.66668701171875" text="Last Updated" />
          </columns>
       </TableView>
-      <Button layoutX="248.0" layoutY="313.0" mnemonicParsing="false" text="Save Update">
+      <Button layoutX="248.0" layoutY="313.0" mnemonicParsing="false" onAction="#onSave" text="Save Update">
          <font>
             <Font size="13.0" />
          </font>
@@ -37,19 +38,27 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <TextArea layoutX="476.0" layoutY="64.0" prefHeight="18.0" prefWidth="199.0" promptText="Comment" />
-      <ComboBox layoutX="26.0" layoutY="313.0" prefWidth="150.0" promptText="Status of the Article" />
-      <Button layoutX="352.0" layoutY="313.0" mnemonicParsing="false" text="Generate Report">
+      <TextArea fx:id="commentBox" layoutX="476.0" layoutY="64.0" prefHeight="18.0" prefWidth="199.0" promptText="Comment" />
+      <ComboBox fx:id="statusComboBox" layoutX="26.0" layoutY="313.0" prefWidth="150.0" promptText="Status of the Article" />
+      <Button layoutX="352.0" layoutY="313.0" mnemonicParsing="false" onAction="#onGenerate" text="Generate Report">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
+      <Label fx:id="massageLabel" alignment="CENTER" layoutX="165.0" layoutY="424.0" prefHeight="23.0" prefWidth="321.0" text="Label">
          <effect>
             <Glow />
          </effect>
       </Label>
-      <ProgressBar layoutX="470.0" layoutY="364.0" prefWidth="200.0" progress="0.58" />
-      <ListView layoutX="476.0" layoutY="108.0" prefHeight="182.0" prefWidth="200.0" />
+      <ProgressBar fx:id="progressBar" layoutX="470.0" layoutY="364.0" prefWidth="200.0" progress="0.0" />
+      <TextField fx:id="idBox" layoutX="26.0" layoutY="348.0" promptText="Article ID" />
+      <TextField fx:id="titleBox" layoutX="187.0" layoutY="348.0" promptText="Title" />
+      <DatePicker fx:id="updateDateBox" layoutX="24.0" layoutY="384.0" promptText="Last Update" />
+      <Button layoutX="607.0" layoutY="108.0" mnemonicParsing="false" onAction="#onSent" prefHeight="27.0" prefWidth="52.0" text="Sent">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="186.0" layoutY="314.0" mnemonicParsing="false" onAction="#onAdd" text="Add" />
    </children>
 </AnchorPane>
