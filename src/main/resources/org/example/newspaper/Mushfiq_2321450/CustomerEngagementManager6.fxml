@@ -8,9 +8,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mushfiq_2321450.CustomerEngagementManager6">
    <children>
@@ -25,20 +23,24 @@
          </font>
       </Label>
       <TextField fx:id="idTF" layoutX="83.0" layoutY="63.0" />
-      <ComboBox fx:id="comboBox" layoutX="247.0" layoutY="63.0" prefWidth="150.0" promptText="Group" />
-      <TableView fx:id="tableView" layoutX="24.0" layoutY="125.0" prefHeight="200.0" prefWidth="380.0">
+      <ComboBox fx:id="comboBox" layoutX="479.0" layoutY="63.0" prefWidth="150.0" promptText="Group" />
+      <TableView fx:id="tableView" layoutX="18.0" layoutY="188.0" prefHeight="200.0" prefWidth="657.0">
         <columns>
-          <TableColumn fx:id="idCol" prefWidth="151.20001792907715" text="ID" />
-          <TableColumn fx:id="groupCol" prefWidth="228.0" text="Group" />
+          <TableColumn fx:id="idCol" prefWidth="81.59997367858887" text="ID" />
+          <TableColumn fx:id="groupCol" prefWidth="77.59998321533203" text="Group" />
+            <TableColumn fx:id="trainingContentCol" prefWidth="159.199951171875" text="Training Content" />
+            <TableColumn fx:id="descriptionCol" prefWidth="338.4000183105469" text="Description" />
         </columns>
       </TableView>
-      <Button layoutX="23.0" layoutY="348.0" mnemonicParsing="false" onAction="#OnAddButtonClick" prefHeight="26.0" prefWidth="50.0" text="Add" />
-      <TextField fx:id="contentTF" layoutX="436.0" layoutY="63.0" promptText="Training Content" />
-      <Line endX="41.399993896484375" endY="378.0" layoutX="381.0" layoutY="50.0" startX="41.399993896484375" startY="12.39999771118164" />
-      <TextArea fx:id="descriptionTA" layoutX="436.0" layoutY="97.0" prefHeight="200.0" prefWidth="200.0" promptText="Description" />
-      <Button layoutX="436.0" layoutY="313.0" mnemonicParsing="false" onAction="#OnUploadVideoButtonClick" text="Upload Video" />
-      <Button layoutX="560.0" layoutY="313.0" mnemonicParsing="false" onAction="#OnAttachFilesButtonClick" text="Attach Files" />
-      <Button layoutX="510.0" layoutY="404.0" mnemonicParsing="false" onAction="#OnAssignButtonClick" text="Assign" />
+      <Button layoutX="18.0" layoutY="403.0" mnemonicParsing="false" onAction="#OnAddButtonClick" prefHeight="26.0" prefWidth="50.0" text="Add" />
+      <TextField fx:id="contentTF" layoutX="83.0" layoutY="104.0" promptText="Training Content" />
+      <TextArea fx:id="descriptionTA" layoutX="247.0" layoutY="57.0" prefHeight="99.0" prefWidth="217.0" promptText="Description" />
+      <Button layoutX="617.0" layoutY="403.0" mnemonicParsing="false" onAction="#OnAssignButtonClick" prefHeight="26.0" prefWidth="58.0" text="Assign" />
       <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#OnBackButtonClick" text="Back" />
+      <Label fx:id="onAddLabel" layoutX="190.0" layoutY="402.0" textFill="#e41717">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
