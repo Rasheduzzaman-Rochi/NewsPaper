@@ -16,7 +16,7 @@ import java.io.IOException;
 public class LayoutDesigner7 {
 
     @FXML
-    private ComboBox<?> comboBox;
+    private ComboBox<String> comboBox;
 
     @FXML
     private Pane pane1;
