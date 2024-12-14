@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mushfiq_2321450.CustomerEngagementManager7">
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Mushfiq_2321450.CustomerEngagementManager7">
    <children>
       <Label fx:id="label" layoutX="243.0" layoutY="7.0" text="Feedback Management">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="tableView" layoutX="29.0" layoutY="80.0" prefHeight="292.0" prefWidth="640.0">
+      <TableView fx:id="tableView" layoutX="19.0" layoutY="80.0" prefHeight="292.0" prefWidth="650.0">
         <columns>
           <TableColumn fx:id="idCol" prefWidth="120.8000545501709" text="Feedback ID" />
           <TableColumn fx:id="nameCol" prefWidth="136.0" text="Customer Name" />
             <TableColumn fx:id="dateCol" prefWidth="131.20001220703125" text="Date" />
-            <TableColumn fx:id="issueCol" prefWidth="254.39999389648438" text="Issue Summary" />
+            <TableColumn fx:id="issueCol" prefWidth="260.0000366210937" text="Issue Summary" />
         </columns>
       </TableView>
       <Button layoutX="271.0" layoutY="392.0" mnemonicParsing="false" onAction="#OnAssignButtonClick" prefHeight="26.0" prefWidth="141.0" text="Assign">

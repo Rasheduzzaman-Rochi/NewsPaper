@@ -19,13 +19,13 @@ public class LayoutDesigner1 {
     private Canvas canvas;
 
     @FXML
-    private ComboBox<?> comboBoxFontColour;
+    private ComboBox<String> comboBoxFontColour;
 
     @FXML
-    private ComboBox<?> comboBoxFontSize;
+    private ComboBox<String> comboBoxFontSize;
 
     @FXML
-    private ComboBox<?> comboBoxShapes;
+    private ComboBox<String> comboBoxShapes;
 
     @FXML
     private Label labelText;
