@@ -12,52 +12,51 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="0.0" prefWidth="38.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.EditorDash">
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Arong_2321464.AdvertisingManager6">
    <children>
       <Label layoutX="41.0" layoutY="14.0" text="Advertising Manager (Print)">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="224.0" layoutY="347.0" promptText="Incentive type" />
-      <Button layoutX="595.0" layoutY="26.0" mnemonicParsing="false" text="Logout">
+      <TextField fx:id="incentive" layoutX="41.0" layoutY="376.0" promptText="Incentive type" />
+      <Button layoutX="587.0" layoutY="20.0" mnemonicParsing="false" onAction="#logout" text="Logout">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <TableView layoutX="41.0" layoutY="50.0" prefHeight="200.0" prefWidth="331.0">
+      <TableView fx:id="tableView1" layoutX="41.0" layoutY="73.0" prefHeight="80.0" prefWidth="248.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Name" />
-          <TableColumn prefWidth="82.0" text="Business type" />
-            <TableColumn prefWidth="84.0" text="Advertising history" />
-            <TableColumn prefWidth="89.0" text="Relationship status" />
+          <TableColumn fx:id="name" prefWidth="55.0" text="Name" />
+          <TableColumn fx:id="business" prefWidth="56.0" text="Business type" />
+            <TableColumn fx:id="advertisingHistory" prefWidth="65.0" text="Advertising history" />
+            <TableColumn fx:id="relationship" prefWidth="71.0" text="Relationship status" />
         </columns>
       </TableView>
-      <TextField layoutX="41.0" layoutY="263.0" promptText="Search Bar" />
-      <DatePicker layoutX="41.0" layoutY="293.0" promptText="Time Selector" />
-      <TextField layoutX="41.0" layoutY="326.0" promptText="Discussion point" />
-      <Button layoutX="42.0" layoutY="358.0" mnemonicParsing="false" text="Save" />
-      <Label layoutX="41.0" layoutY="399.0" text="Label" />
-      <TextArea layoutX="457.0" layoutY="75.0" prefHeight="124.0" prefWidth="200.0" />
-      <Button layoutX="389.0" layoutY="250.0" mnemonicParsing="false" text="Button" />
-      <TableView layoutX="457.0" layoutY="209.0" prefHeight="200.0" prefWidth="200.0">
+      <TextField fx:id="searchBar" layoutX="41.0" layoutY="164.0" promptText="Search Bar" />
+      <DatePicker fx:id="timeSelector" layoutX="42.0" layoutY="201.0" promptText="Time Selector" />
+      <TextField fx:id="discussionPoint" layoutX="41.0" layoutY="240.0" promptText="Discussion point" />
+      <Button layoutX="42.0" layoutY="278.0" mnemonicParsing="false" onAction="#save" text="Save" />
+      <Label fx:id="confirmMeeting" layoutX="43.0" layoutY="313.0" text="Confirm meeting scheduling" />
+      <TextArea fx:id="textArea" layoutX="498.0" layoutY="240.0" prefHeight="80.0" prefWidth="126.0" />
+      <Button layoutX="408.0" layoutY="409.0" mnemonicParsing="false" onAction="#insights" text="Insights" />
+      <TableView fx:id="tableView" layoutX="385.0" layoutY="75.0" prefHeight="74.0" prefWidth="149.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="pastCommunications" prefWidth="148.0" text="Past communications" />
         </columns>
       </TableView>
-      <TextField layoutX="292.0" layoutY="280.0" promptText="Advertising solution" />
-      <DropdownButton layoutX="393.0" layoutY="309.0">
+      <TextField fx:id="advertisingSolution" layoutX="215.0" layoutY="263.0" promptText="Advertising solution" />
+      <DropdownButton fx:id="choice1" layoutX="217.0" layoutY="404.0">
           <items>
               <MenuItem text="Choice 1" />
               <MenuItem text="Choice 2" />
               <MenuItem text="Choice 3" />
           </items>
       </DropdownButton>
-      <Button layoutX="389.0" layoutY="334.0" mnemonicParsing="false" text="Submit" />
-      <TextField layoutX="224.0" layoutY="371.0" promptText="Discount percentage" />
-      <TextField layoutX="224.0" layoutY="395.0" promptText="Expiry date" />
-      <Button layoutX="379.0" layoutY="371.0" mnemonicParsing="false" text=" Advertiser" />
-      <Button layoutX="99.0" layoutY="397.0" mnemonicParsing="false" text=" Adjust strategies" />
+      <Button layoutX="579.0" layoutY="409.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+      <TextField fx:id="discount" layoutX="215.0" layoutY="298.0" promptText="Discount percentage" />
+      <TextField fx:id="expiryDate" layoutX="215.0" layoutY="335.0" promptText="Expiry date" />
+      <Button layoutX="216.0" layoutY="371.0" mnemonicParsing="false" onAction="#advertiser" text=" Advertiser" />
+      <Button layoutX="42.0" layoutY="341.0" mnemonicParsing="false" onAction="#adjust" text=" Adjust strategies" />
    </children>
 </AnchorPane>

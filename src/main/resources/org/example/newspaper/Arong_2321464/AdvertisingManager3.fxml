@@ -9,27 +9,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.EditorDash">
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Arong_2321464.AdvertisingManager3">
    <children>
       <Label layoutX="41.0" layoutY="14.0" text="Advertising Manager (Print)">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <Button layoutX="595.0" layoutY="26.0" mnemonicParsing="false" text="Logout">
+      <Button fx:id="logout" layoutX="595.0" layoutY="26.0" mnemonicParsing="false" text="Logout">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <TableView layoutX="82.0" layoutY="79.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tableview" layoutX="82.0" layoutY="79.0" prefHeight="200.0" prefWidth="226.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="displaylist" prefWidth="75.0" text="Display list" />
+          <TableColumn fx:id="schedulemeeting" prefWidth="75.0" text="Schedule meeting" />
+            <TableColumn fx:id="viewdetails" prefWidth="75.0" text="View details" />
         </columns>
       </TableView>
-      <TextField layoutX="82.0" layoutY="292.0" promptText="Initial proposed rate" />
-      <TextArea layoutX="325.0" layoutY="79.0" prefHeight="200.0" prefWidth="200.0" promptText="Suggested terms" />
-      <Label layoutX="82.0" layoutY="339.0" text="Label" />
-      <Button layoutX="84.0" layoutY="366.0" mnemonicParsing="false" text="Finalize Button" />
+      <TextField fx:id="initialproposedrate" layoutX="82.0" layoutY="292.0" promptText="Initial proposed rate" />
+      <TextArea fx:id="suggestedterms" layoutX="381.0" layoutY="79.0" prefHeight="200.0" prefWidth="200.0" promptText="Suggested terms" />
+      <Label fx:id="label" layoutX="82.0" layoutY="339.0" text="Label" />
+      <Button layoutX="84.0" layoutY="366.0" mnemonicParsing="false" onAction="#finalizebutton" text="Finalize Button" />
    </children>
 </AnchorPane>
