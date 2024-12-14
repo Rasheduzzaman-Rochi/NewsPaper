@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Arong_2321464.SubscriptionSalesManager8">
+   <children>
+      <Label layoutX="41.0" layoutY="14.0" text="Subscription Sales Manager (Online)">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="595.0" layoutY="26.0" mnemonicParsing="false" text="Logout">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="label1" layoutX="41.0" layoutY="56.0" text="Pricing and Promotions Management Dashboard" />
+      <TableView fx:id="tableView1" layoutX="41.0" layoutY="79.0" prefHeight="44.0" prefWidth="302.0">
+        <columns>
+          <TableColumn fx:id="planName1" prefWidth="75.0" text=" Plan Name" />
+          <TableColumn fx:id="currentPrice" prefWidth="75.0" text="Current Price" />
+            <TableColumn fx:id="activePromotions" prefWidth="75.0" text="Active Promotions" />
+            <TableColumn fx:id="subscriber" prefWidth="75.0" text="Subscriber Count" />
+        </columns>
+      </TableView>
+      <Button layoutX="41.0" layoutY="129.0" mnemonicParsing="false" onAction="#editPricing" text="Edit Pricing" />
+      <Label fx:id="label2" layoutX="41.0" layoutY="161.0" prefHeight="17.0" prefWidth="149.0" text="Analyze Current Pricing and Performance" />
+      <LineChart fx:id="linechart" layoutX="457.0" layoutY="67.0" prefHeight="116.0" prefWidth="200.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <TableView fx:id="tableView2" layoutX="41.0" layoutY="185.0" prefHeight="44.0" prefWidth="150.0">
+        <columns>
+          <TableColumn fx:id="planName2" prefWidth="75.0" text="Plan Name" />
+          <TableColumn fx:id="performance" prefWidth="75.0" text="Performance Metrics" />
+        </columns>
+      </TableView>
+      <Button layoutX="41.0" layoutY="236.0" mnemonicParsing="false" onAction="#generateAnalysis" text="Generate Analysis Report" />
+      <Label fx:id="label3" layoutX="41.0" layoutY="269.0" prefHeight="17.0" prefWidth="149.0" text="Input New Pricing Strategies or Promotions" />
+      <TextField fx:id="planName3" layoutX="41.0" layoutY="293.0" text="Plan Name" />
+      <TextField fx:id="newPrice" layoutX="41.0" layoutY="325.0" text="New Price" />
+      <DatePicker fx:id="effectiveDate" layoutX="41.0" layoutY="356.0" promptText="Effective Date" />
+      <TextArea fx:id="textArea1" layoutX="41.0" layoutY="388.0" prefHeight="36.0" prefWidth="150.0" text="Promotion Details" />
+      <Button layoutX="41.0" layoutY="430.0" mnemonicParsing="false" onAction="#validate" text="Validate and Save" />
+      <Label fx:id="label4" layoutX="227.0" layoutY="129.0" prefHeight="17.0" prefWidth="150.0" text="Validate Pricing and Promotions" />
+      <GridPane fx:id="grispane" layoutX="457.0" layoutY="369.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <Button layoutX="227.0" layoutY="149.0" mnemonicParsing="false" onAction="#proceed" text="Proceed to Apply" />
+      <Label fx:id="label5" layoutX="227.0" layoutY="181.0" prefHeight="17.0" prefWidth="149.0" text="Apply and Publish Updated Strategies" />
+      <CheckBox fx:id="checkbox" layoutX="227.0" layoutY="206.0" mnemonicParsing="false" text="Confirm Updates" />
+      <Button layoutX="227.0" layoutY="228.0" mnemonicParsing="false" onAction="#publish" text="Publish Updates" />
+      <Label fx:id="label6" layoutX="227.0" layoutY="261.0" text="Confirmation status" />
+      <Label fx:id="label7" layoutX="227.0" layoutY="282.0" prefHeight="17.0" prefWidth="149.0" text="Track Performance of Strategies" />
+      <BarChart fx:id="berchart" layoutX="457.0" layoutY="231.0" prefHeight="90.0" prefWidth="200.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <TableView fx:id="tabelView3" layoutX="227.0" layoutY="304.0" prefHeight="44.0" prefWidth="150.0">
+        <columns>
+          <TableColumn fx:id="strategyName" prefWidth="75.0" text="Strategy Name" />
+          <TableColumn fx:id="metrics" prefWidth="75.0" text="Metrics" />
+        </columns>
+      </TableView>
+      <Button layoutX="227.0" layoutY="356.0" mnemonicParsing="false" onAction="#download" prefHeight="25.0" prefWidth="150.0" text="Download Performance Report" />
+   </children>
+</AnchorPane>

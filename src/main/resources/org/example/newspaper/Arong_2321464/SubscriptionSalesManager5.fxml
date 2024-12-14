@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Arong_2321464.SubscriptionSalesManager5">
+   <children>
+      <Label layoutX="41.0" layoutY="14.0" text="Subscription Sales Manager (Online)">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="logout" layoutX="595.0" layoutY="26.0" mnemonicParsing="false" text="Logout">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="marketing" layoutX="41.0" layoutY="56.0" text="Marketing Campaign Dashboard" />
+      <TableView fx:id="tableView1" layoutX="41.0" layoutY="81.0" prefHeight="68.0" prefWidth="376.0">
+        <columns>
+          <TableColumn fx:id="campaignName1" prefWidth="75.0" text="Campaign Name" />
+          <TableColumn fx:id="status" prefWidth="75.0" text="Status" />
+            <TableColumn fx:id="startDate" prefWidth="75.0" text="Start Date" />
+            <TableColumn fx:id="endDate" prefWidth="75.0" text="End Date" />
+            <TableColumn fx:id="performance" prefWidth="75.0" text="Performance" />
+        </columns>
+      </TableView>
+      <Button layoutX="41.0" layoutY="158.0" mnemonicParsing="false" onAction="#newCampaign" text="New Campaign" />
+      <Button layoutX="41.0" layoutY="191.0" mnemonicParsing="false" onAction="#viewCampaign" text="Campaign Details" />
+      <Label fx:id="newMarketing" layoutX="41.0" layoutY="228.0" text="New Marketing Campaign" />
+      <TextField fx:id="campaignName2" layoutX="41.0" layoutY="252.0" text="Campaign name" />
+      <TextArea fx:id="textArea2" layoutX="242.0" layoutY="157.0" prefHeight="68.0" prefWidth="200.0" text="Campaign description and goals" />
+      <ComboBox fx:id="audienceDemographics" layoutX="41.0" layoutY="286.0" prefWidth="150.0" promptText="Audience demographics" />
+      <DatePicker fx:id="dataPicker" layoutX="41.0" layoutY="321.0" promptText=" Start and End dates" />
+      <TextArea fx:id="textArea1" layoutX="242.0" layoutY="231.0" prefHeight="68.0" prefWidth="200.0" text="Promotional content details" />
+      <Button layoutX="41.0" layoutY="355.0" mnemonicParsing="false" onAction="#saveandschedulecampaign" text="Save and Schedule Campaign" />
+      <Label fx:id="monitorCampaign" layoutX="41.0" layoutY="391.0" text="Monitor Campaign Performance" />
+      <LineChart fx:id="linechart" layoutX="457.0" layoutY="141.0" prefHeight="150.0" prefWidth="200.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <TableView fx:id="tableView2" layoutX="432.0" layoutY="65.0" prefHeight="68.0" prefWidth="225.0">
+        <columns>
+          <TableColumn fx:id="metricType" prefWidth="75.0" text="Metric Type" />
+          <TableColumn fx:id="value" prefWidth="75.0" text=" Value" />
+            <TableColumn fx:id="date" prefWidth="75.0" text=" Date/Time" />
+        </columns>
+      </TableView>
+      <Button layoutX="41.0" layoutY="415.0" mnemonicParsing="false" onAction="#optimizeCCampaign" text="Optimize Campaign" />
+      <Button layoutX="175.0" layoutY="415.0" mnemonicParsing="false" onAction="#pauseCampaign" text="Pause Campaign" />
+      <Label fx:id="campaignOutcome" layoutX="242.0" layoutY="313.0" text="Campaign Outcome Summary" />
+      <TextArea fx:id="textArea3" layoutX="489.0" layoutY="312.0" prefHeight="68.0" prefWidth="160.0" />
+      <Button layoutX="238.0" layoutY="355.0" mnemonicParsing="false" onAction="#generateImprovement" text="Generate Improvement Suggestions" />
+   </children>
+</AnchorPane>

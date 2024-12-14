@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Arong_2321464.SubscriptionSalesManager4">
+   <children>
+      <Label layoutX="41.0" layoutY="14.0" text="Subscription Sales Manager (Online)">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="logout" layoutX="595.0" layoutY="26.0" mnemonicParsing="false" text="Logout">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="defineResearch" layoutX="41.0" layoutY="56.0" text="Define Research Objectives" />
+      <TextField fx:id="inputObjective" layoutX="39.0" layoutY="81.0" text="Input objective title" />
+      <TextArea fx:id="textArea1" layoutX="232.0" layoutY="68.0" prefHeight="76.0" prefWidth="149.0" text=" Specific audience details" />
+      <Button layoutX="42.0" layoutY="117.0" mnemonicParsing="false" onAction="#saveObjective" text="Save Objective" />
+      <Label fx:id="historicalSubscription" layoutX="40.0" layoutY="147.0" text="Historical Subscription Data" />
+      <TableView fx:id="tableView2" layoutX="399.0" layoutY="68.0" prefHeight="76.0" prefWidth="227.0">
+        <columns>
+          <TableColumn fx:id="demographics" prefWidth="75.0" text=" Demographics" />
+          <TableColumn fx:id="subscription2" prefWidth="75.0" text="Subscription Plans" />
+            <TableColumn fx:id="conversion" prefWidth="75.0" text="Conversion Rates" />
+        </columns>
+      </TableView>
+      <Button layoutX="40.0" layoutY="168.0" mnemonicParsing="false" onAction="#fetchData" text="Fetch Data" />
+      <ComboBox fx:id="demographic" layoutX="39.0" layoutY="202.0" prefWidth="150.0" promptText="Demographic categories" />
+      <Button layoutX="39.0" layoutY="236.0" mnemonicParsing="false" onAction="#segmentData" text="Segment Data" />
+      <Label fx:id="dataValidation" layoutX="39.0" layoutY="267.0" text="Data Validation and Compliance" />
+      <CheckBox fx:id="confirmData" layoutX="40.0" layoutY="291.0" mnemonicParsing="false" text="Confirm data accuracy" />
+      <Label fx:id="privacyCompliance" layoutX="39.0" layoutY="318.0" text=" Privacy compliance status" />
+      <Button layoutX="39.0" layoutY="343.0" mnemonicParsing="false" onAction="#proceed" text="Proceed to Analysis" />
+      <Label fx:id="competitorAnalysis" layoutX="39.0" layoutY="375.0" text="Competitor Analysis" />
+      <TableView fx:id="tableView1" layoutX="232.0" layoutY="155.0" prefHeight="76.0" prefWidth="302.0">
+        <columns>
+          <TableColumn fx:id="competitor" prefWidth="75.0" text="Competitor" />
+          <TableColumn fx:id="subscription1" prefWidth="75.0" text="Subscription Models" />
+            <TableColumn fx:id="price" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="features" prefWidth="75.0" text="Features" />
+        </columns>
+      </TableView>
+      <Button layoutX="39.0" layoutY="399.0" mnemonicParsing="false" onAction="#fetchCompetitor" text="Fetch Competitor Data" />
+      <Button layoutX="41.0" layoutY="433.0" mnemonicParsing="false" onAction="#analyzeTrends" text="Analyze Trends" />
+      <Label fx:id="feedback" layoutX="232.0" layoutY="240.0" text="Feedback Collection" />
+      <ListView fx:id="listView" layoutX="232.0" layoutY="262.0" prefHeight="76.0" prefWidth="149.0" />
+      <TextField fx:id="focusGroup" layoutX="232.0" layoutY="350.0" text="Focus group prompt" />
+      <Button layoutX="232.0" layoutY="387.0" mnemonicParsing="false" onAction="#addFeedback" text="Add Feedback" />
+      <Button layoutX="232.0" layoutY="421.0" mnemonicParsing="false" onAction="#viewFeedback" text="View Feedback Summary" />
+      <Label fx:id="actionable" layoutX="399.0" layoutY="240.0" text="Actionable Insights and Strategies" />
+      <TextArea fx:id="textArea2" layoutX="406.0" layoutY="263.0" prefHeight="69.0" prefWidth="149.0" text="Consolidated findings" />
+      <Button layoutX="394.0" layoutY="421.0" mnemonicParsing="false" onAction="#generateStrategy" text="Generate Strategy Report" />
+      <Button layoutX="557.0" layoutY="421.0" mnemonicParsing="false" onAction="#submit" text="Submit for Review" />
+   </children>
+</AnchorPane>

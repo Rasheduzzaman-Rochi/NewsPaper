@@ -2,40 +2,38 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Rochi_2320366.EditorDash">
+<AnchorPane prefHeight="472.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.newspaper.Arong_2321464.AdvertisingManager1">
    <children>
       <Label layoutX="41.0" layoutY="14.0" text="Advertising Manager (Print)">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <Button layoutX="595.0" layoutY="26.0" mnemonicParsing="false" text="Logout">
+      <Button layoutX="595.0" layoutY="26.0" mnemonicParsing="false" onAction="#logoutButton" text="Logout">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <TableView layoutX="41.0" layoutY="79.0" prefHeight="200.0" prefWidth="491.0">
+      <TableView fx:id="table" layoutX="41.0" layoutY="79.0" prefHeight="200.0" prefWidth="491.0">
         <columns>
-          <TableColumn prefWidth="128.0" text="Campaign Name" />
-          <TableColumn prefWidth="134.0" text="Client Name" />
-            <TableColumn prefWidth="101.0" text="Budget" />
-            <TableColumn prefWidth="127.0" text="Status" />
+          <TableColumn fx:id="nameColumn" prefWidth="128.0" text="Campaign Name" />
+          <TableColumn fx:id="nameClient" prefWidth="134.0" text="Client Name" />
+            <TableColumn fx:id="budget" prefWidth="101.0" text="Budget" />
+            <TableColumn fx:id="status" prefWidth="127.0" text="Status" />
         </columns>
       </TableView>
-      <Button layoutX="41.0" layoutY="292.0" mnemonicParsing="false" text="Button" />
-      <TextField layoutX="41.0" layoutY="323.0" promptText="Advertiser Name" />
-      <TextField layoutX="41.0" layoutY="357.0" promptText="Ad Description" />
-      <TextField layoutX="41.0" layoutY="390.0" promptText="Budget Input" />
-      <Button layoutX="372.0" layoutY="323.0" mnemonicParsing="false" text="Save Button" />
-      <Label layoutX="41.0" layoutY="434.0" text="Label" />
-      <Slider layoutX="342.0" layoutY="363.0" />
-      <Button layoutX="372.0" layoutY="390.0" mnemonicParsing="false" text="Submit Button" />
+      <Button layoutX="41.0" layoutY="292.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
+      <TextField fx:id="nameAdvertiser" layoutX="41.0" layoutY="323.0" promptText="Advertiser Name" />
+      <TextField fx:id="adDescription" layoutX="41.0" layoutY="357.0" promptText="Ad Description" />
+      <TextField fx:id="inputBudget" layoutX="41.0" layoutY="390.0" promptText="Budget Input" />
+      <Button layoutX="372.0" layoutY="323.0" mnemonicParsing="false" onAction="#showButton" text="Show" />
+      <Label fx:id="label" layoutX="41.0" layoutY="434.0" text="Label" />
+      <Button layoutX="372.0" layoutY="390.0" mnemonicParsing="false" onAction="#submitButton" text="Submit Button" />
    </children>
 </AnchorPane>
