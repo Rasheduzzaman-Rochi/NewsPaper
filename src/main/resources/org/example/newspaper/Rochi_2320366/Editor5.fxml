@@ -19,13 +19,13 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TableView fx:id="table" layoutX="14.0" layoutY="62.0" prefHeight="240.0" prefWidth="457.0">
+      <TableView fx:id="table" layoutX="14.0" layoutY="62.0" prefHeight="240.0" prefWidth="503.0">
          <columns>
-            <TableColumn fx:id="articleIDColumn" prefWidth="66.66666412353516" text="Article ID" />
-            <TableColumn fx:id="titleColumn" prefWidth="136.6666717529297" text="Title" />
-            <TableColumn fx:id="categoryColumn" prefWidth="57.66668701171875" text="Category" />
-            <TableColumn fx:id="dateColumn" prefWidth="102.66665649414062" text="Finalization Date" />
-            <TableColumn fx:id="priorityColumn" prefWidth="96.33334350585938" text="Priority Level" />
+            <TableColumn fx:id="articleIDColumn" prefWidth="102.0" text="Article ID" />
+            <TableColumn fx:id="titleColumn" prefWidth="109.0" text="Title" />
+            <TableColumn fx:id="categoryColumn" prefWidth="87.0" text="Category" />
+            <TableColumn fx:id="dateColumn" prefWidth="112.0" text="Finalization Date" />
+            <TableColumn fx:id="priorityColumn" prefWidth="92.0" text="Priority Level" />
          </columns>
       </TableView>
       <Button layoutX="602.0" layoutY="21.0" mnemonicParsing="false" onAction="#onBack" text="Back">
@@ -33,7 +33,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <TextArea fx:id="textArea" layoutX="475.0" layoutY="64.0" prefHeight="239.0" prefWidth="199.0" promptText="Placement suggestions or additional comments for the layout team." wrapText="true" />
+      <TextArea fx:id="textArea" layoutX="525.0" layoutY="64.0" prefHeight="240.0" prefWidth="149.0" promptText="Placement suggestions or additional comments for the layout team." wrapText="true" />
       <Button layoutX="628.0" layoutY="309.0" mnemonicParsing="false" onAction="#onSent" text="Sent" />
       <ComboBox fx:id="priorityComboBox" layoutX="28.0" layoutY="313.0" prefHeight="25.0" prefWidth="120.0" promptText="Priority Level" />
       <Button layoutX="559.0" layoutY="378.0" mnemonicParsing="false" onAction="#onConfirm" text="Confirm">
@@ -47,9 +47,9 @@
          </effect>
       </Label>
       <TextField fx:id="titleBox" layoutX="308.0" layoutY="314.0" promptText="Titile" />
-      <TextField fx:id="IdBox" layoutX="154.0" layoutY="314.0" promptText="Article ID" />
       <ComboBox fx:id="categoryBox" layoutX="99.0" layoutY="351.0" prefHeight="25.0" prefWidth="120.0" promptText="Category" />
       <DatePicker fx:id="dateBox" layoutX="242.0" layoutY="350.0" promptText="Finalization Date" />
       <Button layoutX="478.0" layoutY="314.0" mnemonicParsing="false" onAction="#onAdd" text="Add" />
+      <ComboBox fx:id="articleIDCombo" layoutX="154.0" layoutY="313.0" prefWidth="150.0" promptText="Article ID" />
    </children>
 </AnchorPane>

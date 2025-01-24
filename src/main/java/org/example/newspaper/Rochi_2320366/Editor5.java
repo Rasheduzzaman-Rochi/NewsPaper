@@ -11,33 +11,29 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.example.newspaper.Mandira_2321486.Reporter1ModelClass;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Editor5 {
     @javafx.fxml.FXML
-    private TextField IdBox;
-    @javafx.fxml.FXML
     private ComboBox<String> categoryBox;
     @javafx.fxml.FXML
-    private TableColumn<Editor5ModelClass,String> categoryColumn;
+    private TableColumn<Editor5ModelClass, String> categoryColumn;
     @javafx.fxml.FXML
     private ComboBox<String> priorityComboBox;
     @javafx.fxml.FXML
-    private TableColumn<Editor5ModelClass,String> priorityColumn;
+    private TableColumn<Editor5ModelClass, String> priorityColumn;
     @javafx.fxml.FXML
-    private TableColumn<Editor5ModelClass,String> titleColumn;
+    private TableColumn<Editor5ModelClass, String> titleColumn;
     @javafx.fxml.FXML
-    private TableColumn<Editor5ModelClass,String> articleIDColumn;
+    private TableColumn<Editor5ModelClass, String> articleIDColumn;
     @javafx.fxml.FXML
     private Label massageLabel;
     @javafx.fxml.FXML
     private TextField titleBox;
     @javafx.fxml.FXML
-    private TableColumn<Editor5ModelClass,LocalDate> dateColumn;
+    private TableColumn<Editor5ModelClass, LocalDate> dateColumn;
     @javafx.fxml.FXML
     private DatePicker dateBox;
     @javafx.fxml.FXML
@@ -46,11 +42,14 @@ public class Editor5 {
     private TextArea textArea;
 
     private ArrayList<Editor5ModelClass> userList = new ArrayList<>();
+    @FXML
+    private ComboBox<String> articleIDCombo;
 
     @FXML
     public void initialize() {
         categoryBox.getItems().addAll("Sports", "Business", "Technology", "Politics", "Entertainment");
         priorityComboBox.getItems().addAll("Low", "Medium", "High");
+        loadArticleIDs();
         articleIDColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
@@ -98,7 +97,7 @@ public class Editor5 {
     }
 
     @javafx.fxml.FXML
-    public void onSent(ActionEvent actionEvent){
+    public void onSent(ActionEvent actionEvent) {
         String comment = textArea.getText();
 
         if (comment.isEmpty()) {
@@ -119,7 +118,7 @@ public class Editor5 {
     public void onAdd(ActionEvent actionEvent) {
         String title = titleBox.getText();
         LocalDate date = dateBox.getValue();
-        String id = IdBox.getText();
+        String id = articleIDCombo.getValue();
         String category = categoryBox.getValue();
         String priority = priorityComboBox.getValue();
 
@@ -129,8 +128,29 @@ public class Editor5 {
 
         titleBox.clear();
         dateBox.valueProperty().set(null);
-        IdBox.clear();
+        articleIDCombo.setValue(null);
         categoryBox.setValue(null);
         priorityComboBox.setValue(null);
+        articleIDCombo.getItems().remove(id);
+    }
+
+    private void loadArticleIDs() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Reporter1.bin"))) {
+            while (true) {
+                try {
+                    Reporter1ModelClass u = (Reporter1ModelClass) ois.readObject();
+                    String id = u.getId();
+                    if (!articleIDCombo.getItems().contains(id)) {
+                        articleIDCombo.getItems().add(id);
+                    }
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (EOFException e) {
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
